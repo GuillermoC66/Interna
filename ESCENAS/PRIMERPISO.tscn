@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://db0o73xiuq118"]
+
+[ext_resource type="Texture2D" uid="uid://boky26pmnenid" path="res://TEXTURAS/PERSONA5/icon.svg" id="1_qm1ml"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_w8gh2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcbdh"]
+size = Vector2(0.992754, 0.96)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(537, 1032)
+scale = Vector2(1080, -150)
+mesh = SubResource("QuadMesh_w8gh2")
+texture = ExtResource("1_qm1ml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(539, 1030)
+scale = Vector2(1079.82, -150)
+shape = SubResource("RectangleShape2D_pcbdh")
