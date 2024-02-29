@@ -6,7 +6,8 @@
 [node name="ELMUNDO" type="Node2D"]
 
 [node name="JUGADORSIN" parent="." instance=ExtResource("1_fk75c")]
-position = Vector2(-38, -123)
+position = Vector2(-36, 410)
+scale = Vector2(0.5, 0.5)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_7xmnr")]
 position = Vector2(-12, -13)
