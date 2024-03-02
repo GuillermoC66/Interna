@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf7mi3nvpst8a"]
+
+[ext_resource type="Texture2D" uid="uid://cix78dieu3im6" path="res://TEXTURAS/BGS/2023-10-16 BLOCK.png" id="1_xis0x"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_mfdg3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olkbu"]
+size = Vector2(46.875, 46.875)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(19, 4)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(59, 57)
+scale = Vector2(120, 120)
+mesh = SubResource("QuadMesh_mfdg3")
+texture = ExtResource("1_xis0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(59, 57)
+scale = Vector2(2.56, 2.56)
+shape = SubResource("RectangleShape2D_olkbu")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd4afugxoeau4"]
+[gd_scene load_steps=5 format=3 uid="uid://dd4afugxoeau4"]
 
 [ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/JUGADORSIN.tscn" id="1_fk75c"]
 [ext_resource type="PackedScene" uid="uid://db0o73xiuq118" path="res://ESCENAS/PRIMERPISO.tscn" id="2_7xmnr"]
 [ext_resource type="Script" path="res://SCRIPTS/MOVJUGADORV2.gd" id="2_gosad"]
+[ext_resource type="PackedScene" uid="uid://cf7mi3nvpst8a" path="res://ESCENAS/BLOQUE.tscn" id="4_qggcf"]
 
 [node name="ELMUNDO" type="Node2D"]
 
@@ -16,5 +17,10 @@ position = Vector2(-8, -13)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("2_7xmnr")]
 texture_repeat = 2
-position = Vector2(-8, 1088)
+position = Vector2(356, 1264)
 rotation = -1.5708
+scale = Vector2(0.625, 0.625)
+
+[node name="MeshInstance2D" parent="." instance=ExtResource("4_qggcf")]
+position = Vector2(705, 778)
+scale = Vector2(0.5, 0.5)
