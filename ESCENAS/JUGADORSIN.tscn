@@ -1,30 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://cka2icva25c4q"]
+[gd_scene load_steps=4 format=3 uid="uid://cka2icva25c4q"]
 
 [ext_resource type="Texture2D" uid="uid://dkwlx1734b5fb" path="res://TEXTURAS/PERSONA5/2024-02-01 FAINAL.png" id="1_q6lbe"]
-[ext_resource type="Texture2D" uid="uid://bjvmscg4yv6xo" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0001.png" id="2_y1h5c"]
-[ext_resource type="Texture2D" uid="uid://fehxav3k5ik1" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0002.png" id="3_srdty"]
-[ext_resource type="Texture2D" uid="uid://c5w51ccb2b88i" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0003.png" id="4_qgqfm"]
-[ext_resource type="Texture2D" uid="uid://dnbbv0ejyctpu" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0004.png" id="5_1kl0p"]
-[ext_resource type="Texture2D" uid="uid://b7cqo21dbgddj" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0005.png" id="6_etj5q"]
-[ext_resource type="Texture2D" uid="uid://botbb3oagmtk0" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0006.png" id="7_j1beg"]
-[ext_resource type="Texture2D" uid="uid://bm6kp1l1g5481" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0007.png" id="8_8lw6j"]
-[ext_resource type="Texture2D" uid="uid://m8p2pkdp4d4p" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0008.png" id="9_7r13o"]
-[ext_resource type="Texture2D" uid="uid://b1iay44bogv88" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0009.png" id="10_p3o02"]
-[ext_resource type="Texture2D" uid="uid://hxy4po4o2h8f" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0010.png" id="11_4g7ns"]
-[ext_resource type="Texture2D" uid="uid://cfonm5am85le2" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0011.png" id="12_gpp2p"]
-[ext_resource type="Texture2D" uid="uid://e1v6r3stu7tf" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0012.png" id="13_ew70l"]
-[ext_resource type="Texture2D" uid="uid://7v4e8n78uqr" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0013.png" id="14_mcja4"]
-[ext_resource type="Texture2D" uid="uid://bojsb6qf6cfiv" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0014.png" id="15_ya301"]
-[ext_resource type="Texture2D" uid="uid://dic3byd85mn4c" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0015.png" id="16_goa6y"]
-[ext_resource type="Texture2D" uid="uid://x2o5llsp60t7" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0016.png" id="17_6rjas"]
-[ext_resource type="Texture2D" uid="uid://deuc6pv2up56r" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0017.png" id="18_7mq8q"]
-[ext_resource type="Texture2D" uid="uid://bniifddn1pdsw" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0018.png" id="19_7ksr3"]
-[ext_resource type="Texture2D" uid="uid://cttg8h50nodrl" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0019.png" id="20_52x0l"]
-[ext_resource type="Texture2D" uid="uid://ofhvopjcbxi5" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0020.png" id="21_wedmw"]
-[ext_resource type="Texture2D" uid="uid://86m5f4q5nuw1" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0021.png" id="22_0onaa"]
-[ext_resource type="Texture2D" uid="uid://d1qwmhxs6knvo" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0022.png" id="23_7pqws"]
-[ext_resource type="Texture2D" uid="uid://byp8bogqee84m" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0023.png" id="24_wsrrv"]
-[ext_resource type="Texture2D" uid="uid://kp8o820j128l" path="res://TEXTURAS/PERSONA5/ANIMACION PERSONAJE/caminar/CAMINAR_0024.png" id="25_5qhio"]
 
 [sub_resource type="GDScript" id="GDScript_t6rte"]
 script/source = "extends CharacterBody2D
@@ -137,86 +113,6 @@ func _physics_process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddxwu"]
 size = Vector2(63, 230.5)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_r2dxq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_y1h5c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_srdty")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_qgqfm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_1kl0p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_etj5q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_j1beg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_8lw6j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_7r13o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_p3o02")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_4g7ns")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_gpp2p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_ew70l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_mcja4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_ya301")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_goa6y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_6rjas")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_7mq8q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_7ksr3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_52x0l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_wedmw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_0onaa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_7pqws")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_wsrrv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_5qhio")
-}],
-"loop": true,
-"name": &"CAMINAR",
-"speed": 24.0
-}]
-
 [node name="JUGADORSIN" type="CharacterBody2D"]
 script = SubResource("GDScript_t6rte")
 
@@ -228,11 +124,3 @@ texture = ExtResource("1_q6lbe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(222, 952.75)
 shape = SubResource("RectangleShape2D_ddxwu")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(224, 929)
-scale = Vector2(0.153, 0.153)
-sprite_frames = SubResource("SpriteFrames_r2dxq")
-animation = &"CAMINAR"
-frame = 7
-frame_progress = 0.377526
