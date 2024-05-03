@@ -1,0 +1,22 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=5 format=3 uid="uid://cnvay1i1u4biq"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0fe6y"]
+animation = &"WalkToRun"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wifkf"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3gyqj"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yyago"]
+switch_mode = 2
+advance_mode = 2
+
+[resource]
+resource_name = "idle to walk"
+states/IdleToWalk/node = SubResource("AnimationNodeAnimation_0fe6y")
+states/IdleToWalk/position = Vector2(338.667, 101.556)
+states/walk/node = SubResource("AnimationNodeAnimation_wifkf")
+states/walk/position = Vector2(481.333, 100.667)
+transitions = ["Start", "IdleToWalk", SubResource("AnimationNodeStateMachineTransition_3gyqj"), "IdleToWalk", "walk", SubResource("AnimationNodeStateMachineTransition_yyago")]
