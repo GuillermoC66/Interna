@@ -1,9 +1,10 @@
-[gd_scene load_steps=85 format=3 uid="uid://cka2icva25c4q"]
+[gd_scene load_steps=91 format=3 uid="uid://cka2icva25c4q"]
 
 [ext_resource type="Script" path="res://SCRIPTS/MovimientoJugador.gd" id="1_0hd3e"]
 [ext_resource type="Shape2D" uid="uid://dacdhcjw367h" path="res://RECURSOS/collisionStand.tres" id="1_u1gde"]
 [ext_resource type="Texture2D" uid="uid://c7aus3po250nc" path="res://SPRITES/AnimacionesPJ/AnimacionesTemp/idles.png" id="2_0q5o2"]
 [ext_resource type="Texture2D" uid="uid://co1oklpbp2o2n" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_01.png" id="2_eyxdb"]
+[ext_resource type="Texture2D" uid="uid://fa4kwjnad1w8" path="res://SPRITES/AnimacionesPJ/AnimacionesTemp/dash.png" id="4_0rr4p"]
 [ext_resource type="Texture2D" uid="uid://bco8y6yhnyvrh" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_02.png" id="4_s7jb4"]
 [ext_resource type="Texture2D" uid="uid://dljuv1ep8ry4x" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_05.png" id="5_5n0fg"]
 [ext_resource type="Texture2D" uid="uid://cybhln526gk5p" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_06.png" id="6_ffh5r"]
@@ -401,12 +402,42 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_plnwp"]
+resource_name = "dash"
+length = 0.291671
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"dash"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.166667, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c7im1"]
 _data = {
 "IdleToWalk": SubResource("Animation_um1sm"),
 "RESET": SubResource("Animation_kl26l"),
 "WalkToRun": SubResource("Animation_vxfmh"),
 "crouch": SubResource("Animation_mndsc"),
+"dash": SubResource("Animation_plnwp"),
 "fall": SubResource("Animation_8dsok"),
 "idle": SubResource("Animation_0nwl6"),
 "jump": SubResource("Animation_lbe38"),
@@ -425,6 +456,22 @@ region = Rect2(406, 356, 203, 356)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mopje"]
 atlas = ExtResource("2_0q5o2")
 region = Rect2(406, 0, 203, 356)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyfj4"]
+atlas = ExtResource("4_0rr4p")
+region = Rect2(70, 0, 310, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbimw"]
+atlas = ExtResource("4_0rr4p")
+region = Rect2(410, 0, 520, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g62qt"]
+atlas = ExtResource("4_0rr4p")
+region = Rect2(918, 0, 459, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3sh4"]
+atlas = ExtResource("4_0rr4p")
+region = Rect2(1475, 0, 300, 420)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n5quc"]
 atlas = ExtResource("11_6pely")
@@ -467,7 +514,19 @@ animations = [{
 "name": &"crouch",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyfj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbimw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g62qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3sh4")
+}],
 "loop": true,
 "name": &"dash",
 "speed": 5.0
@@ -718,6 +777,7 @@ offset = Vector2(200, 0)
 position_smoothing_enabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_pkx8b")
 anim_player = NodePath("../AnimationPlayer")
 
