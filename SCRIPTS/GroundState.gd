@@ -1,9 +1,9 @@
-extends State
+extends StatePlayer
 
 class_name GroundState
 
 #Variables de lógica para salto
-@export var airState : State
+@export var airState : StatePlayer
 @export var camara : Camera2D
 
 #CollisionShapes para agacharse
@@ -15,10 +15,13 @@ var shape_crouch = preload("res://RECURSOS/collisionCrouch.tres")
 #@export var dash_animation : String = "dash"
 
 func state_process(delta):
-	if(!character.is_on_floor()):
-		next_state = airState
+	# Agregar gravedad a jugador
+	if (!character.is_on_floor()):
+		character.velocity.y += get_gravity() * delta
+		Transition.emit(self, airState)
 
-func state_input(event : InputEvent):		
+func state_input(event : InputEvent):	
+	jump()	
 	if(event.is_action_pressed("ui_up")):
 		lookUp()
 	elif(event.is_action_pressed("ui_down")):
@@ -26,6 +29,11 @@ func state_input(event : InputEvent):
 	elif(event.is_action_released("ui_down") || event.is_action_released("ui_up")):
 		stopCrouch()
 
+#Salto	
+func jump():
+	if Input.is_action_just_pressed("ui_select"):
+		character.velocity.y = jump_velocity
+	
 #Cambiar CollisionShape		
 func crouch():
 	can_move = false

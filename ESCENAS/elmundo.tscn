@@ -14,7 +14,7 @@ position = Vector2(-958, -2)
 
 [node name="StaticBody2D2" parent="StaticBody2D" instance=ExtResource("2_7xmnr")]
 texture_repeat = 2
-position = Vector2(-1950, 1112)
+position = Vector2(-1956, 1282)
 rotation = -1.5708
 scale = Vector2(0.795, 0.78)
 
@@ -24,3 +24,4 @@ scale = Vector2(2.61, 0.83)
 
 [node name="Player" parent="." instance=ExtResource("1_fk75c")]
 position = Vector2(582, 491)
+scale = Vector2(2.5, 2.5)
