@@ -24,6 +24,7 @@ func state_process(delta):
 func state_input(event : InputEvent):	
 	jump()	
 	if(event.is_action_pressed("dash")):
+		can_dash = false
 		Transition.emit(self, dashState)
 	if(event.is_action_pressed("ui_up")):
 		lookUp()

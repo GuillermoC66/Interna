@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://cka2icva25c4q"]
+[gd_scene load_steps=101 format=3 uid="uid://cka2icva25c4q"]
 
 [ext_resource type="Script" path="res://SCRIPTS/MovimientoJugador.gd" id="1_0hd3e"]
 [ext_resource type="Shape2D" uid="uid://dacdhcjw367h" path="res://RECURSOS/collisionStand.tres" id="1_u1gde"]
@@ -144,8 +144,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_plnwp"]
 resource_name = "dash"
-length = 0.291671
-step = 0.0416667
+length = 0.666675
+step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,7 +165,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0416667, 0.166667, 0.25),
+"times": PackedFloat32Array(0, 0.0833333, 0.416667, 0.583333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
@@ -668,6 +668,9 @@ animation = &"WalkToRun"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l142k"]
 animation = &"crouch"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ykng6"]
+animation = &"dash"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tn30q"]
 animation = &"fall"
 
@@ -742,6 +745,14 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uyne2"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vvrie"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_olx4d"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0e41x"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ualg8"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_pkx8b"]
 states/End/position = Vector2(860, 21.5106)
 states/IdleToWalk/node = SubResource("AnimationNodeAnimation_70lj0")
@@ -751,6 +762,8 @@ states/WalkToRun/node = SubResource("AnimationNodeAnimation_r78ws")
 states/WalkToRun/position = Vector2(219.926, -41.6297)
 states/crouch/node = SubResource("AnimationNodeAnimation_l142k")
 states/crouch/position = Vector2(133.259, 143.741)
+states/dash/node = SubResource("AnimationNodeAnimation_ykng6")
+states/dash/position = Vector2(-130.741, -95.6959)
 states/fall/node = SubResource("AnimationNodeAnimation_tn30q")
 states/fall/position = Vector2(211.926, -188.967)
 states/idle/node = SubResource("AnimationNodeAnimation_flk56")
@@ -769,8 +782,8 @@ states/transLookUp/node = SubResource("AnimationNodeAnimation_414qi")
 states/transLookUp/position = Vector2(277.704, 145.207)
 states/walk/node = SubResource("AnimationNodeAnimation_h2w5o")
 states/walk/position = Vector2(461.259, -113.8)
-transitions = ["transLookUp", "lookup", SubResource("AnimationNodeStateMachineTransition_3fo27"), "transCrouch", "crouch", SubResource("AnimationNodeStateMachineTransition_cib5d"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_4acyx"), "idle", "WalkToRun", SubResource("AnimationNodeStateMachineTransition_8043r"), "WalkToRun", "run", SubResource("AnimationNodeStateMachineTransition_3axrb"), "run", "stop", SubResource("AnimationNodeStateMachineTransition_2g62l"), "stop", "idle", SubResource("AnimationNodeStateMachineTransition_a0qfj"), "idle", "transCrouch", SubResource("AnimationNodeStateMachineTransition_dpbia"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_j326n"), "idle", "transLookUp", SubResource("AnimationNodeStateMachineTransition_sl0b2"), "lookup", "idle", SubResource("AnimationNodeStateMachineTransition_8xvju"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_rs1du"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_0ls42"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_jbu0a"), "IdleToWalk", "walk", SubResource("AnimationNodeStateMachineTransition_385kg"), "idle", "IdleToWalk", SubResource("AnimationNodeStateMachineTransition_uxlg7"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_uyne2")]
-graph_offset = Vector2(-118.741, -117.282)
+transitions = ["transLookUp", "lookup", SubResource("AnimationNodeStateMachineTransition_3fo27"), "transCrouch", "crouch", SubResource("AnimationNodeStateMachineTransition_cib5d"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_4acyx"), "idle", "WalkToRun", SubResource("AnimationNodeStateMachineTransition_8043r"), "WalkToRun", "run", SubResource("AnimationNodeStateMachineTransition_3axrb"), "run", "stop", SubResource("AnimationNodeStateMachineTransition_2g62l"), "stop", "idle", SubResource("AnimationNodeStateMachineTransition_a0qfj"), "idle", "transCrouch", SubResource("AnimationNodeStateMachineTransition_dpbia"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_j326n"), "idle", "transLookUp", SubResource("AnimationNodeStateMachineTransition_sl0b2"), "lookup", "idle", SubResource("AnimationNodeStateMachineTransition_8xvju"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_rs1du"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_0ls42"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_jbu0a"), "IdleToWalk", "walk", SubResource("AnimationNodeStateMachineTransition_385kg"), "idle", "IdleToWalk", SubResource("AnimationNodeStateMachineTransition_uxlg7"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_uyne2"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_vvrie"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_olx4d"), "jump", "dash", SubResource("AnimationNodeStateMachineTransition_0e41x"), "dash", "jump", SubResource("AnimationNodeStateMachineTransition_ualg8")]
+graph_offset = Vector2(-269.951, -148.608)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -788,14 +801,13 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ghlx7")
-animation = &"idle"
+animation = &"dash"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(200, 0)
 position_smoothing_enabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_pkx8b")
 anim_player = NodePath("../AnimationPlayer")
 
@@ -819,17 +831,21 @@ script = ExtResource("33_av4f8")
 airState = NodePath("../Air")
 dashState = NodePath("../Dash")
 camara = NodePath("../../Camera2D")
+can_move = null
 
 [node name="Air" type="Node" parent="StateMachine" node_paths=PackedStringArray("groundState", "dashState")]
 script = ExtResource("34_kidm3")
 groundState = NodePath("../Ground")
 dashState = NodePath("../Dash")
+can_move = null
 
 [node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("groundState", "airState")]
 script = ExtResource("36_jots7")
 groundState = NodePath("../Ground")
 airState = NodePath("../Air")
-dash_Velocity = 100.0
+dash_Velocity = 1700.0
 
 [node name="Timer" type="Timer" parent="StateMachine/Dash"]
 one_shot = true
+
+[node name="CanDash" type="Timer" parent="StateMachine"]

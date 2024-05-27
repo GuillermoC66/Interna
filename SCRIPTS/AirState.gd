@@ -17,6 +17,7 @@ func state_process(delta):
 
 func state_input(event : InputEvent):	
 	if(event.is_action_pressed("dash")):
+		can_dash = false
 		Transition.emit(self, dashState)
 
 func stopJump():

@@ -4,6 +4,7 @@ class_name StatePlayer
 
 signal Transition
 @export var can_move : bool = true
+var can_dash : bool = true
 
 var character : CharacterBody2D
 var playback : AnimationNodeStateMachinePlayback

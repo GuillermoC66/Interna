@@ -7,7 +7,7 @@ extends CharacterBody2D
 var directionX : float = 0
 var directionY : float = 0
 var playback
-var flipSprite
+var flipSprite = 1
 var velocidadCaminar : float = 410
 var velocidadCorrer : float = 700
 
@@ -16,14 +16,14 @@ func _ready():
 	playback = animacion["parameters/playback"]
 	
 func _physics_process(delta):
-	if stateMachine.canMove():
+	if stateMachine.canMove() and stateMachine.current_state.name != "Dash":
 		directionX = Input.get_axis("ui_left", "ui_right")
 		directionY = Input.get_axis("ui_up", "ui_down")
 		if Input.is_action_pressed("walk"):
 			walkRun(velocidadCaminar, "walk")
 		else:
 			walkRun(velocidadCorrer, "run")
-	animacionesJump()
+		animacionesJump()
 	move_and_slide()
 
 #Movimiento horizontal (Correr, caminar)
