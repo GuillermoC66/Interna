@@ -4,6 +4,7 @@ class_name GroundState
 
 #Variables de lógica para salto
 @export var airState : StatePlayer
+@export var dashState : StatePlayer
 @export var camara : Camera2D
 
 #CollisionShapes para agacharse
@@ -22,11 +23,13 @@ func state_process(delta):
 
 func state_input(event : InputEvent):	
 	jump()	
+	if(event.is_action_pressed("dash")):
+		Transition.emit(self, dashState)
 	if(event.is_action_pressed("ui_up")):
 		lookUp()
 	elif(event.is_action_pressed("ui_down")):
 		crouch()
-	elif(event.is_action_released("ui_down") || event.is_action_released("ui_up")):
+	elif(event.is_action_released("ui_down") || event.is_action_released("ui_up") || event.is_action_pressed("ui_left") || event.is_action_pressed("ui_right")):
 		stopCrouch()
 
 #Salto	
@@ -36,7 +39,7 @@ func jump():
 	
 #Cambiar CollisionShape		
 func crouch():
-	can_move = false
+	detenerse()
 	character.collision_shape.shape = shape_crouch
 	character.collision_shape.position.y = 25
 	playback.travel("transCrouch")
@@ -50,6 +53,9 @@ func stopCrouch():
 
 #Mirar arriba	
 func lookUp():
-	can_move = false
+	detenerse()
 	playback.travel("transLookUp")
 
+func detenerse():
+	character.velocity.x = 0
+	can_move = false

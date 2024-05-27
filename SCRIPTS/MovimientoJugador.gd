@@ -4,8 +4,10 @@ extends CharacterBody2D
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
 @onready var stateMachine : StateMachine = $StateMachine
 
-var direction : float = 0
+var directionX : float = 0
+var directionY : float = 0
 var playback
+var flipSprite
 var velocidadCaminar : float = 410
 var velocidadCorrer : float = 700
 
@@ -15,7 +17,8 @@ func _ready():
 	
 func _physics_process(delta):
 	if stateMachine.canMove():
-		direction = Input.get_axis("ui_left", "ui_right")
+		directionX = Input.get_axis("ui_left", "ui_right")
+		directionY = Input.get_axis("ui_up", "ui_down")
 		if Input.is_action_pressed("walk"):
 			walkRun(velocidadCaminar, "walk")
 		else:
@@ -25,9 +28,9 @@ func _physics_process(delta):
 
 #Movimiento horizontal (Correr, caminar)
 func walkRun(velocidad, animacion):
-	if direction:
+	if directionX:
 		spriteDirection()
-		velocity.x = direction * velocidad
+		velocity.x = directionX * velocidad
 		playback.travel(animacion)
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidad)
@@ -36,10 +39,12 @@ func walkRun(velocidad, animacion):
 	
 #Verificar direccion del sprite
 func spriteDirection():
-	if direction == -1:
+	if directionX == -1:
 		get_node("AnimatedSprite2D").flip_h = true
-	elif direction == 1:
+		flipSprite = -1
+	elif directionX == 1:
 		get_node("AnimatedSprite2D").flip_h = false
+		flipSprite = 1
 
 #Verificar la animacion de salto y caer
 func animacionesJump():
