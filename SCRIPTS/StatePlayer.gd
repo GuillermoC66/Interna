@@ -3,11 +3,10 @@ extends Node
 class_name StatePlayer
 
 signal Transition
-@export var can_move : bool = true
-var can_dash : bool = true
 
 var character : CharacterBody2D
 var playback : AnimationNodeStateMachinePlayback
+@export var stateMachine : Node
 
 #Constantes que modifican salto.
 const jump_height = 270.0 #Alto del salto,

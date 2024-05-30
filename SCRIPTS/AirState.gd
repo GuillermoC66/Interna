@@ -2,9 +2,6 @@ extends StatePlayer
 
 class_name AirState
 
-#Se puede mover de lado a lado
-#puede hacer dash
-#Variables de lógica para salto
 @export var groundState : StatePlayer
 @export var dashState : StatePlayer
 
@@ -13,11 +10,11 @@ func state_process(delta):
 		character.velocity.y += get_gravity() * delta
 		stopJump()
 	else:
+		stateMachine.can_dash = true
 		Transition.emit(self, groundState)
 
 func state_input(event : InputEvent):	
-	if(event.is_action_pressed("dash")):
-		can_dash = false
+	if(event.is_action_pressed("dash") and stateMachine.can_dash):
 		Transition.emit(self, dashState)
 
 func stopJump():

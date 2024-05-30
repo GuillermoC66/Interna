@@ -1,6 +1,7 @@
 extends CharacterBody2D
 #Nodos necesarios
 @onready var animacion : AnimationTree = $AnimationTree
+#@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
 @onready var stateMachine : StateMachine = $StateMachine
 
@@ -10,6 +11,7 @@ var playback
 var flipSprite = 1
 var velocidadCaminar : float = 410
 var velocidadCorrer : float = 700
+var life = 5
 
 func _ready():
 	animacion.active = true
@@ -52,3 +54,6 @@ func animacionesJump():
 		playback.travel("jump")
 	elif(velocity.y > 0):
 		playback.travel("fall")
+
+
+

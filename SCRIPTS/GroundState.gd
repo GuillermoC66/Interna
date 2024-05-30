@@ -11,10 +11,9 @@ class_name GroundState
 var shape_stand = preload("res://RECURSOS/collisionStand.tres")
 var shape_crouch = preload("res://RECURSOS/collisionCrouch.tres")
 
-#Variables de lógica para dash
-#@export var dash_state : State
-#@export var dash_animation : String = "dash"
-
+func Enter():
+	playback.travel("idle")
+	
 func state_process(delta):
 	# Agregar gravedad a jugador
 	if (!character.is_on_floor()):
@@ -23,8 +22,7 @@ func state_process(delta):
 
 func state_input(event : InputEvent):	
 	jump()	
-	if(event.is_action_pressed("dash")):
-		can_dash = false
+	if(event.is_action_pressed("dash") and stateMachine.can_dash):
 		Transition.emit(self, dashState)
 	if(event.is_action_pressed("ui_up")):
 		lookUp()
@@ -47,10 +45,9 @@ func crouch():
 	
 #Regresar la CollisionShape a su forma original		
 func stopCrouch():
-	can_move = true
+	stateMachine.can_move = true
 	character.collision_shape.shape = shape_stand
 	character.collision_shape.position.y = 10
-	playback.travel("runnin")
 
 #Mirar arriba	
 func lookUp():
@@ -59,4 +56,4 @@ func lookUp():
 
 func detenerse():
 	character.velocity.x = 0
-	can_move = false
+	stateMachine.can_move = false

@@ -1,27 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://dd4afugxoeau4"]
+[gd_scene load_steps=6 format=3 uid="uid://dd4afugxoeau4"]
 
 [ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/Player.tscn" id="1_fk75c"]
 [ext_resource type="PackedScene" uid="uid://db0o73xiuq118" path="res://ESCENAS/PRIMERPISO.tscn" id="2_7xmnr"]
+[ext_resource type="PackedScene" uid="uid://buljphv8tli08" path="res://ESCENAS/enemy.tscn" id="4_jtvnr"]
 [ext_resource type="PackedScene" uid="uid://cf7mi3nvpst8a" path="res://ESCENAS/BLOQUE.tscn" id="4_qggcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5t67g"]
+size = Vector2(411, 277)
 
 [node name="ELMUNDO" type="Node2D"]
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_7xmnr")]
+[node name="plataformas test" parent="." instance=ExtResource("2_7xmnr")]
 position = Vector2(212, 10)
 
-[node name="StaticBody2D" parent="StaticBody2D" instance=ExtResource("2_7xmnr")]
+[node name="StaticBody2D" parent="plataformas test" instance=ExtResource("2_7xmnr")]
 position = Vector2(-958, -2)
 
-[node name="StaticBody2D2" parent="StaticBody2D" instance=ExtResource("2_7xmnr")]
+[node name="StaticBody2D2" parent="plataformas test" instance=ExtResource("2_7xmnr")]
 texture_repeat = 2
 position = Vector2(-1956, 1282)
 rotation = -1.5708
 scale = Vector2(0.795, 0.78)
 
-[node name="MeshInstance2D" parent="." instance=ExtResource("4_qggcf")]
-position = Vector2(-568, 710)
+[node name="MeshInstance2D2" parent="plataformas test" instance=ExtResource("4_qggcf")]
+position = Vector2(-780, 700)
 scale = Vector2(2.61, 0.83)
+
+[node name="StaticBody2D3" parent="plataformas test" instance=ExtResource("2_7xmnr")]
+position = Vector2(948, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_fk75c")]
 position = Vector2(582, 491)
 scale = Vector2(2.5, 2.5)
+
+[node name="Enemy" parent="." instance=ExtResource("4_jtvnr")]
+position = Vector2(57, 775)
+
+[node name="test" type="Area2D" parent="." groups=["test"]]
+position = Vector2(1081, 820)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
+shape = SubResource("RectangleShape2D_5t67g")
