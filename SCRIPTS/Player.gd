@@ -5,6 +5,7 @@ extends CharacterBody2D
 #@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
 @onready var stateMachine : StateMachine = $StateMachine
+@onready var camera : Camera2D = $Camera2D
 
 var directionX : float = 0
 var directionY : float = 0
@@ -44,9 +45,11 @@ func walkRun(velocidad, animacionAsignada):
 #Verificar direccion del sprite
 func spriteDirection():
 	if directionX == -1:
+		#moveCamera(-1)
 		get_node("AnimatedSprite2D").flip_h = true
 		flipSprite = -1
 	elif directionX == 1:
+		#moveCamera(1)
 		get_node("AnimatedSprite2D").flip_h = false
 		flipSprite = 1
 
@@ -57,5 +60,7 @@ func animacionesJump():
 	elif(velocity.y > 0):
 		playback.travel("fall")
 
-
+func moveCamera(direccion):
+	if (camera.position != Vector2(-145, 0) && flipSprite == -1) && (camera.position != Vector2(145, 0) && flipSprite == 1):
+		camera.position += direccion * Vector2(100, 0) * 0.5
 

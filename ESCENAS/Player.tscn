@@ -879,7 +879,7 @@ sprite_frames = SubResource("SpriteFrames_ghlx7")
 animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-144, 1.6)
+position = Vector2(-145, 0)
 offset = Vector2(200, 0)
 position_smoothing_enabled = true
 
@@ -922,6 +922,10 @@ camara = NodePath("../../Camera2D")
 hurtbox = NodePath("../../Hurtbox")
 stateMachine = NodePath("..")
 
+[node name="Timer" type="Timer" parent="StateMachine/Ground"]
+wait_time = 0.3
+one_shot = true
+
 [node name="Air" type="Node" parent="StateMachine" node_paths=PackedStringArray("groundState", "dashState", "stateMachine")]
 script = ExtResource("34_kidm3")
 groundState = NodePath("../Ground")
@@ -956,6 +960,7 @@ one_shot = true
 
 [connection signal="area_entered" from="Hurtbox" to="StateMachine" method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="HitboxDash" to="StateMachine/Dash" method="_on_hitbox_dash_area_entered"]
+[connection signal="timeout" from="StateMachine/Ground/Timer" to="StateMachine/Ground" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Dash/DashTime" to="StateMachine/Dash" method="_on_dash_time_timeout"]
 [connection signal="timeout" from="StateMachine/Hurt/Knockback" to="StateMachine/Hurt" method="_on_knockback_timeout"]
 [connection signal="timeout" from="StateMachine/Can Dash Again" to="StateMachine" method="_on_can_dash_again_timeout"]

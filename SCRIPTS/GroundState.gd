@@ -11,6 +11,9 @@ class_name GroundState
 #CollisionShapes para agacharse
 var shape_stand = preload("res://RECURSOS/collisionStand.tres")
 var shape_crouch = preload("res://RECURSOS/collisionCrouch.tres")
+@onready var timer : Timer = $Timer
+var movimiento = Vector2(0, 150)
+var direccion
 
 func Enter():
 	playback.travel("idle")
@@ -45,20 +48,30 @@ func crouch():
 	character.collision_shape.shape = shape_crouch
 	character.collision_shape.position.y = 25
 	playback.travel("transCrouch")
-	
-#Regresar la CollisionShape a su forma original		
-func stopCrouch():
-	stateMachine.can_move = true
-	hurtbox.position.y = 0
-	hurtbox.scale.y = 1
-	character.collision_shape.shape = shape_stand
-	character.collision_shape.position.y = 10
+	timer.start()
+	direccion = 1
+	timer.timeout.connect( _on_timer_timeout)
 
 #Mirar arriba	
 func lookUp():
 	detenerse()
 	playback.travel("transLookUp")
+	timer.start()
+	direccion = -1
+	timer.timeout.connect( _on_timer_timeout)
 
+#Regresar la CollisionShape a su forma original		
+func stopCrouch():
+	character.camera.position= Vector2(-145, 0)
+	stateMachine.can_move = true
+	hurtbox.position.y = 0
+	hurtbox.scale.y = 1
+	character.collision_shape.shape = shape_stand
+	character.collision_shape.position.y = 10
+	
 func detenerse():
 	character.velocity.x = 0
 	stateMachine.can_move = false
+
+func _on_timer_timeout():
+	character.camera.position += direccion * movimiento * 0.9
