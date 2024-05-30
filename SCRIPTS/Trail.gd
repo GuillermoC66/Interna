@@ -4,7 +4,7 @@ extends Line2D
 var queue : Array 
 var character : CharacterBody2D
 
-func _process(delta):
+func _process(_delta):
 	var pos = character.position
 	queue.push_front(pos)
 	

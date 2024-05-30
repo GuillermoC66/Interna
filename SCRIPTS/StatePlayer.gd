@@ -18,10 +18,10 @@ var jump_velocity = -((2.0 * jump_height) / jump_peak)
 var jump_gravity : float = -((-2.0 * jump_height) / (jump_peak * jump_peak))
 var fall_gravity : float = -((-2.0 * jump_height) / (jump_fall * jump_fall))
 
-func state_process(delta):
+func state_process(_delta):
 	pass
 	
-func state_input(event : InputEvent):
+func state_input(_event : InputEvent):
 	pass
 
 func Enter():

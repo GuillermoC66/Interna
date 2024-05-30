@@ -6,6 +6,7 @@ class_name GroundState
 @export var airState : StatePlayer
 @export var dashState : StatePlayer
 @export var camara : Camera2D
+@export var hurtbox : Area2D
 
 #CollisionShapes para agacharse
 var shape_stand = preload("res://RECURSOS/collisionStand.tres")
@@ -39,6 +40,8 @@ func jump():
 #Cambiar CollisionShape		
 func crouch():
 	detenerse()
+	hurtbox.position.y = 24
+	hurtbox.scale.y = 0.5
 	character.collision_shape.shape = shape_crouch
 	character.collision_shape.position.y = 25
 	playback.travel("transCrouch")
@@ -46,6 +49,8 @@ func crouch():
 #Regresar la CollisionShape a su forma original		
 func stopCrouch():
 	stateMachine.can_move = true
+	hurtbox.position.y = 0
+	hurtbox.scale.y = 1
 	character.collision_shape.shape = shape_stand
 	character.collision_shape.position.y = 10
 

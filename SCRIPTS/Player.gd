@@ -1,6 +1,7 @@
 extends CharacterBody2D
 #Nodos necesarios
 @onready var animacion : AnimationTree = $AnimationTree
+@onready var hitboxDash : Area2D = $HitboxDash
 #@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
 @onready var stateMachine : StateMachine = $StateMachine
@@ -14,10 +15,11 @@ var velocidadCorrer : float = 700
 var life = 5
 
 func _ready():
+	hitboxDash.scale = Vector2(0.1, 0.1)
 	animacion.active = true
 	playback = animacion["parameters/playback"]
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if stateMachine.canMove() and stateMachine.current_state.name != "Dash":
 		directionX = Input.get_axis("ui_left", "ui_right")
 		directionY = Input.get_axis("ui_up", "ui_down")
@@ -29,11 +31,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 #Movimiento horizontal (Correr, caminar)
-func walkRun(velocidad, animacion):
+func walkRun(velocidad, animacionAsignada):
 	if directionX:
 		spriteDirection()
 		velocity.x = directionX * velocidad
-		playback.travel(animacion)
+		playback.travel(animacionAsignada)
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidad)
 		if velocity.y == 0:
