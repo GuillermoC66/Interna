@@ -1,9 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd4afugxoeau4"]
+[gd_scene load_steps=12 format=3 uid="uid://dd4afugxoeau4"]
 
 [ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/Player.tscn" id="1_fk75c"]
 [ext_resource type="PackedScene" uid="uid://db0o73xiuq118" path="res://ESCENAS/PRIMERPISO.tscn" id="2_7xmnr"]
 [ext_resource type="PackedScene" uid="uid://buljphv8tli08" path="res://ESCENAS/enemy.tscn" id="4_jtvnr"]
 [ext_resource type="PackedScene" uid="uid://cf7mi3nvpst8a" path="res://ESCENAS/BLOQUE.tscn" id="4_qggcf"]
+[ext_resource type="PackedScene" uid="uid://d03vjcnurbj8m" path="res://ESCENAS/pauseMenu.tscn" id="5_1ykic"]
+[ext_resource type="Script" path="res://SCRIPTS/LifeLabel.gd" id="5_c63kh"]
+[ext_resource type="Script" path="res://SCRIPTS/debugLabel.gd" id="6_n733e"]
+[ext_resource type="Texture2D" uid="uid://b7dg7caw3dsb4" path="res://RECURSOS/pause-icon-sign-symbol-design-free-png.png" id="7_305xn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qod1a"]
+font_color = Color(0.803922, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_irp5r"]
+font_size = 12
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7plq4"]
+blend_mode = 1
+light_mode = 1
 
 [node name="ELMUNDO" type="Node2D"]
 
@@ -17,7 +31,7 @@ rotation = -1.5708
 scale = Vector2(0.795, 0.78)
 
 [node name="MeshInstance2D3" parent="plataformas test" instance=ExtResource("4_qggcf")]
-position = Vector2(-4833, -104)
+position = Vector2(-4969, 258)
 scale = Vector2(5, 1.5)
 
 [node name="MeshInstance2D2" parent="plataformas test" instance=ExtResource("4_qggcf")]
@@ -30,14 +44,56 @@ position = Vector2(-960, -4)
 [node name="plataformas test" parent="plataformas test" instance=ExtResource("2_7xmnr")]
 position = Vector2(-3070, -244)
 
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("4_jtvnr")]
+position = Vector2(239, 839)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("4_jtvnr")]
+position = Vector2(-1463, 304)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("4_jtvnr")]
+position = Vector2(-3727, -123)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("4_jtvnr")]
+position = Vector2(-3135, 294)
+
 [node name="Player" parent="." instance=ExtResource("1_fk75c")]
 position = Vector2(974, 667)
 
-[node name="Enemy3" parent="." instance=ExtResource("4_jtvnr")]
-position = Vector2(-3580, -67)
+[node name="GUITest" type="CanvasLayer" parent="."]
 
-[node name="Enemy" parent="." instance=ExtResource("4_jtvnr")]
-position = Vector2(-1463, 304)
+[node name="VBoxContainer" type="VBoxContainer" parent="GUITest"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -45.0
+offset_bottom = 44.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
-[node name="Enemy2" parent="." instance=ExtResource("4_jtvnr")]
-position = Vector2(-3135, 294)
+[node name="Life" type="Label" parent="GUITest/VBoxContainer" node_paths=PackedStringArray("player")]
+layout_mode = 2
+text = "wawa"
+label_settings = SubResource("LabelSettings_qod1a")
+script = ExtResource("5_c63kh")
+player = NodePath("../../../Player")
+
+[node name="Debug" type="Label" parent="GUITest/VBoxContainer" node_paths=PackedStringArray("player")]
+layout_mode = 2
+text = "w"
+label_settings = SubResource("LabelSettings_irp5r")
+script = ExtResource("6_n733e")
+player = NodePath("../../../Player")
+
+[node name="Button" type="Button" parent="GUITest"]
+material = SubResource("CanvasItemMaterial_7plq4")
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("7_305xn")
+
+[node name="Control" parent="GUITest" instance=ExtResource("5_1ykic")]
+
+[connection signal="pressed" from="GUITest/Button" to="GUITest/Control" method="_on_button_pressed"]

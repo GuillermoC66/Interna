@@ -62,6 +62,7 @@ func lookUp():
 
 #Regresar la CollisionShape a su forma original		
 func stopCrouch():
+	timer.stop()
 	character.camera.position= Vector2(-145, 0)
 	stateMachine.can_move = true
 	hurtbox.position.y = 0
