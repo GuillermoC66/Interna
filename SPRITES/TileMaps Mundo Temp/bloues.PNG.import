@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6sw2chegbxm8"
-path="res://.godot/imported/IDLECAMTRANS_01.png-62bd3e6db428abe9eb05b23afd0527d1.ctex"
+uid="uid://rsheyx25d3c6"
+path="res://.godot/imported/bloues.PNG-2376f91d3e54c2b328cb0b7bb6b6c372.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITES/AnimacionesPJ/06 idle-caminar trans/IDLECAMTRANS_01.png"
-dest_files=["res://.godot/imported/IDLECAMTRANS_01.png-62bd3e6db428abe9eb05b23afd0527d1.ctex"]
+source_file="res://SPRITES/TileMaps Mundo Temp/bloues.PNG"
+dest_files=["res://.godot/imported/bloues.PNG-2376f91d3e54c2b328cb0b7bb6b6c372.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
