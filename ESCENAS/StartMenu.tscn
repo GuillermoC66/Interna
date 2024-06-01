@@ -10,11 +10,11 @@ blend_mode = 3
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d1fhn"]
 blend_mode = 3
 
-[sub_resource type="Animation" id="Animation_o7r2q"]
-resource_name = "show"
-
 [sub_resource type="Animation" id="Animation_db36x"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_o7r2q"]
+resource_name = "show"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57fi1"]
 _data = {
