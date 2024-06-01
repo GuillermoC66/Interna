@@ -31,6 +31,7 @@ rotation = -1.5708
 scale = Vector2(0.795, 0.78)
 
 [node name="MeshInstance2D3" parent="plataformas test" instance=ExtResource("4_qggcf")]
+texture_repeat = 2
 position = Vector2(-4969, 258)
 scale = Vector2(5, 1.5)
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://db0o73xiuq118"]
 
-[ext_resource type="Texture2D" uid="uid://djtyiu15jbfs6" path="res://TEXTURAS/BGS/2023-10-16.png" id="1_kyvun"]
+[ext_resource type="Texture2D" uid="uid://dfh4j3oofnukq" path="res://TEXTURAS/ENVIRONMENT/FOREGROUND/Plataforma/Piso/2024-05-30 Centro.png" id="1_auajy"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_w8gh2"]
 
@@ -10,10 +10,11 @@ size = Vector2(0.889035, 2.12667)
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(484, 1117)
-scale = Vector2(960, -320)
+position = Vector2(482, 1253)
+rotation = -0.0837758
+scale = Vector2(960, -960)
 mesh = SubResource("QuadMesh_w8gh2")
-texture = ExtResource("1_kyvun")
+texture = ExtResource("1_auajy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(483.001, 1117.5)
