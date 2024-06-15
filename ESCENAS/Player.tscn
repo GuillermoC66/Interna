@@ -855,6 +855,7 @@ position = Vector2(0.5, 10)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxDash"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_buqgf")
+debug_color = Color(0.947641, 2.31028e-06, 0.582125, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
@@ -895,7 +896,7 @@ hurtbox = NodePath("../../Hurtbox")
 stateMachine = NodePath("..")
 
 [node name="Timer" type="Timer" parent="StateMachine/Ground"]
-wait_time = 0.3
+wait_time = 2.0
 one_shot = true
 
 [node name="Air" type="Node" parent="StateMachine" node_paths=PackedStringArray("groundState", "dashState", "stateMachine")]
@@ -903,6 +904,8 @@ script = ExtResource("34_kidm3")
 groundState = NodePath("../Ground")
 dashState = NodePath("../Dash")
 stateMachine = NodePath("..")
+
+[node name="Timer" type="Timer" parent="StateMachine/Air"]
 
 [node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("canDashAgain", "groundState", "airState", "hitbox", "stateMachine")]
 script = ExtResource("36_jots7")
@@ -933,6 +936,7 @@ one_shot = true
 [connection signal="area_entered" from="Hurtbox" to="StateMachine" method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="HitboxDash" to="StateMachine/Dash" method="_on_hitbox_dash_area_entered"]
 [connection signal="timeout" from="StateMachine/Ground/Timer" to="StateMachine/Ground" method="_on_timer_timeout"]
+[connection signal="timeout" from="StateMachine/Air/Timer" to="StateMachine/Air" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Dash/DashTime" to="StateMachine/Dash" method="_on_dash_time_timeout"]
 [connection signal="timeout" from="StateMachine/Hurt/Knockback" to="StateMachine/Hurt" method="_on_knockback_timeout"]
 [connection signal="timeout" from="StateMachine/Can Dash Again" to="StateMachine" method="_on_can_dash_again_timeout"]

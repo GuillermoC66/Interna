@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dd4afugxoeau4"]
+[gd_scene load_steps=14 format=3 uid="uid://dd4afugxoeau4"]
 
 [ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/Player.tscn" id="1_fk75c"]
+[ext_resource type="Script" path="res://SCRIPTS/testMundo.gd" id="1_rk0d2"]
 [ext_resource type="PackedScene" uid="uid://db0o73xiuq118" path="res://ESCENAS/PRIMERPISO.tscn" id="2_7xmnr"]
 [ext_resource type="PackedScene" uid="uid://buljphv8tli08" path="res://ESCENAS/enemy.tscn" id="4_jtvnr"]
 [ext_resource type="PackedScene" uid="uid://cf7mi3nvpst8a" path="res://ESCENAS/BLOQUE.tscn" id="4_qggcf"]
@@ -8,6 +9,9 @@
 [ext_resource type="Script" path="res://SCRIPTS/LifeLabel.gd" id="5_c63kh"]
 [ext_resource type="Script" path="res://SCRIPTS/debugLabel.gd" id="6_n733e"]
 [ext_resource type="Texture2D" uid="uid://b7dg7caw3dsb4" path="res://RECURSOS/pause-icon-sign-symbol-design-free-png.png" id="7_305xn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6k1ke"]
+size = Vector2(613.629, 79.6099)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qod1a"]
 font_color = Color(0.803922, 1, 0, 1)
@@ -20,6 +24,7 @@ blend_mode = 1
 light_mode = 1
 
 [node name="ELMUNDO" type="Node2D"]
+script = ExtResource("1_rk0d2")
 
 [node name="plataformas test" parent="." instance=ExtResource("2_7xmnr")]
 position = Vector2(212, 10)
@@ -43,6 +48,15 @@ position = Vector2(-960, -4)
 
 [node name="plataformas test" parent="plataformas test" instance=ExtResource("2_7xmnr")]
 position = Vector2(-3070, -244)
+
+[node name="Area2D" type="Area2D" parent="plataformas test" groups=["KillBox"]]
+position = Vector2(1759, 1299)
+scale = Vector2(11.52, 5.64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformas test/Area2D"]
+position = Vector2(-316.146, 122.34)
+shape = SubResource("RectangleShape2D_6k1ke")
+debug_color = Color(1, 0.0426788, 0.320794, 0.42)
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -96,4 +110,5 @@ icon = ExtResource("7_305xn")
 
 [node name="Control" parent="GUITest" instance=ExtResource("5_1ykic")]
 
+[connection signal="area_entered" from="plataformas test/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="pressed" from="GUITest/Button" to="GUITest/Control" method="_on_button_pressed"]
