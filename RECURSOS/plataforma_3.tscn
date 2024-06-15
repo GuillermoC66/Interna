@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://no37lk3wcngv"]
+
+[ext_resource type="Texture2D" uid="uid://dkwin2ewdbkoo" path="res://TEXTURAS/ENVIRONMENT/FOREGROUND/Plataforma/Piso/2024-05-30 Extremo 01.png" id="1_ybwo2"]
+
+[node name="Plataforma3" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ybwo2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-90, 126, 95, 125, 82, 54, 83, 39, 104, 10, 90, -48, 44, -61, 5, -96, -58, -113, -58, -113, -106, -109, -82, 9, -67, 89)

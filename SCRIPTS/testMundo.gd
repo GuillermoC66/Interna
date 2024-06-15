@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var character : CharacterBody2D = $Player
-@onready var gameOver_scene = preload("res://ESCENAS/gameOver.tscn") as PackedScene
 var pjVivo : bool = true
 
 func _process(_delta):
