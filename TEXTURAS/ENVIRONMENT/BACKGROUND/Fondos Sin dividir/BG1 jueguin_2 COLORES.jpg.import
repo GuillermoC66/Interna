@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgy7w3lic7y8o"
-path="res://.godot/imported/BG1 jueguin_4 ESCALA GRISES.jpg-1d4a74292a2a0d2ee9eb2faca79b68b4.ctex"
+uid="uid://b01nhnp1cf1cn"
+path="res://.godot/imported/BG1 jueguin_2 COLORES.jpg-24f1a319b8083e8ccb3b05ca7d64a90d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TEXTURAS/ENVIRONMENT/BACKGROUND/BG1 jueguin_4 ESCALA GRISES.jpg"
-dest_files=["res://.godot/imported/BG1 jueguin_4 ESCALA GRISES.jpg-1d4a74292a2a0d2ee9eb2faca79b68b4.ctex"]
+source_file="res://TEXTURAS/ENVIRONMENT/BACKGROUND/Fondos Sin dividir/BG1 jueguin_2 COLORES.jpg"
+dest_files=["res://.godot/imported/BG1 jueguin_2 COLORES.jpg-24f1a319b8083e8ccb3b05ca7d64a90d.ctex"]
 
 [params]
 

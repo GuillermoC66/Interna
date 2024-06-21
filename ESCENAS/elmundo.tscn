@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dd4afugxoeau4"]
+[gd_scene load_steps=14 format=3 uid="uid://dd4afugxoeau4"]
 
 [ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/Player.tscn" id="1_fk75c"]
 [ext_resource type="PackedScene" uid="uid://db0o73xiuq118" path="res://ESCENAS/PRIMERPISO.tscn" id="2_7xmnr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://SCRIPTS/LifeLabel.gd" id="5_c63kh"]
 [ext_resource type="Script" path="res://SCRIPTS/debugLabel.gd" id="6_n733e"]
 [ext_resource type="Texture2D" uid="uid://b7dg7caw3dsb4" path="res://RECURSOS/pause-icon-sign-symbol-design-free-png.png" id="7_305xn"]
+[ext_resource type="Texture2D" uid="uid://b01nhnp1cf1cn" path="res://TEXTURAS/ENVIRONMENT/BACKGROUND/Fondos Sin dividir/BG1 jueguin_2 COLORES.jpg" id="9_y2edc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qod1a"]
 font_color = Color(0.803922, 1, 0, 1)
@@ -19,7 +20,21 @@ font_size = 12
 blend_mode = 1
 light_mode = 1
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t2xou"]
+blend_mode = 3
+
 [node name="ELMUNDO" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+scale = Vector2(0.7, 0.7)
+transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
+
+[node name="Bg1Jueguin2Colores" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+position = Vector2(398.571, 618.571)
+scale = Vector2(0.822547, 0.723326)
+texture = ExtResource("9_y2edc")
 
 [node name="plataformas test" parent="." instance=ExtResource("2_7xmnr")]
 position = Vector2(212, 10)
@@ -96,5 +111,17 @@ scale = Vector2(0.1, 0.1)
 icon = ExtResource("7_305xn")
 
 [node name="Control" parent="GUITest" instance=ExtResource("5_1ykic")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_t2xou")
+offset_left = -883.0
+offset_top = -438.0
+offset_right = 1475.0
+offset_bottom = 1104.0
+scale = Vector2(1.16, 1.16)
+color = Color(0.647348, 0.739578, 0.99264, 0.337255)
+
+[node name="2024-06-20Bg04Background" type="Sprite2D" parent="."]
+position = Vector2(842, 835)
 
 [connection signal="pressed" from="GUITest/Button" to="GUITest/Control" method="_on_button_pressed"]
