@@ -21,4 +21,3 @@ func stopJump():
 	if !Input.is_action_pressed("ui_select") && character.velocity.y < 0:
 		character.velocity.y = 0
 	
-
