@@ -69,4 +69,3 @@ func moveCamera(direccion):
 func die():
 	print("me mori")
 	#poner animaciones de muerte y demas.
-
