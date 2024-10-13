@@ -2,18 +2,15 @@ extends Node
 
 class_name StateMachine
 
+var DamagePosition
 @export var character : CharacterBody2D
 @export var animacion : AnimationTree
 @export var current_state : StatePlayer
 @export var hurt_state : StatePlayer
-
-#Booleanos
 var can_move : bool = true
 var can_dash : bool = true
 var can_getHurt : bool = true
-var coyote_jump : bool = false
 
-var DamagePosition
 var states : Array[StatePlayer]
 
 func _ready():
@@ -48,12 +45,8 @@ func _input(event : InputEvent):
 func _on_hurtbox_area_entered(area):
 	if area.is_in_group("Hitbox") and can_getHurt:
 		DamagePosition = area.global_position
-		if character.life > 1:
-			character.life -= 1
-			on_child_transition(current_state, hurt_state)
-		else:
-			character.life = 0
-			character.die()
+		character.life -= 1
+		on_child_transition(current_state, hurt_state)
 		
 func _on_can_dash_again_timeout():
 	can_dash = true

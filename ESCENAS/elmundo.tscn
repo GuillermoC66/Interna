@@ -1,28 +1,13 @@
-
-[gd_scene load_steps=21 format=3 uid="uid://dd4afugxoeau4"]
 [gd_scene load_steps=14 format=3 uid="uid://dd4afugxoeau4"]
 
 [ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/Player.tscn" id="1_fk75c"]
-[ext_resource type="Script" path="res://SCRIPTS/testMundo.gd" id="1_rk0d2"]
+[ext_resource type="PackedScene" uid="uid://db0o73xiuq118" path="res://ESCENAS/PRIMERPISO.tscn" id="2_7xmnr"]
 [ext_resource type="PackedScene" uid="uid://buljphv8tli08" path="res://ESCENAS/enemy.tscn" id="4_jtvnr"]
+[ext_resource type="PackedScene" uid="uid://cf7mi3nvpst8a" path="res://ESCENAS/BLOQUE.tscn" id="4_qggcf"]
 [ext_resource type="PackedScene" uid="uid://d03vjcnurbj8m" path="res://ESCENAS/pauseMenu.tscn" id="5_1ykic"]
 [ext_resource type="Script" path="res://SCRIPTS/LifeLabel.gd" id="5_c63kh"]
 [ext_resource type="Script" path="res://SCRIPTS/debugLabel.gd" id="6_n733e"]
 [ext_resource type="Texture2D" uid="uid://b7dg7caw3dsb4" path="res://RECURSOS/pause-icon-sign-symbol-design-free-png.png" id="7_305xn"]
-
-[ext_resource type="Texture2D" uid="uid://37tlpomd0bis" path="res://TEXTURAS/ENVIRONMENT/BACKGROUND/4-og.png" id="10_fep4g"]
-[ext_resource type="Texture2D" uid="uid://dwbotvqx7c6of" path="res://TEXTURAS/ENVIRONMENT/BACKGROUND/2-og-agujeros.png" id="11_x5ynw"]
-[ext_resource type="Texture2D" uid="uid://dqlsyr0f5i614" path="res://TEXTURAS/ENVIRONMENT/BACKGROUND/1-og-agujeros.png" id="12_bpy6b"]
-[ext_resource type="PackedScene" uid="uid://boecmxapipbmx" path="res://RECURSOS/plataforma_6.tscn" id="13_jhl6t"]
-[ext_resource type="PackedScene" uid="uid://7jh3vqwh3jx8" path="res://RECURSOS/plataforma_1.tscn" id="13_y2kvl"]
-[ext_resource type="PackedScene" uid="uid://no37lk3wcngv" path="res://RECURSOS/plataforma_3.tscn" id="14_hab61"]
-[ext_resource type="PackedScene" uid="uid://cphdrdoacigdw" path="res://RECURSOS/plataforma_2.tscn" id="15_yv3cp"]
-[ext_resource type="PackedScene" uid="uid://luxi6ucv005x" path="res://RECURSOS/plataforma_4.tscn" id="16_t0rq4"]
-[ext_resource type="PackedScene" uid="uid://du4m0hq8unsvc" path="res://RECURSOS/plataforma_5.tscn" id="18_8otr3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6k1ke"]
-size = Vector2(613.629, 79.6099)
-
 [ext_resource type="Texture2D" uid="uid://b01nhnp1cf1cn" path="res://TEXTURAS/ENVIRONMENT/BACKGROUND/Fondos Sin dividir/BG1 jueguin_2 COLORES.jpg" id="9_y2edc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qod1a"]
@@ -39,10 +24,6 @@ light_mode = 1
 blend_mode = 3
 
 [node name="ELMUNDO" type="Node2D"]
-
-
-script = ExtResource("1_rk0d2")
-
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -82,10 +63,10 @@ position = Vector2(-3070, -244)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("4_jtvnr")]
-position = Vector2(-29, 803)
+position = Vector2(239, 839)
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("4_jtvnr")]
-position = Vector2(-1610, 66)
+position = Vector2(-1463, 304)
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("4_jtvnr")]
 position = Vector2(-3727, -123)
@@ -93,18 +74,8 @@ position = Vector2(-3727, -123)
 [node name="Enemy3" parent="Enemies" instance=ExtResource("4_jtvnr")]
 position = Vector2(-3135, 294)
 
-[node name="Area2D" type="Area2D" parent="Enemies" groups=["KillBox"]]
-position = Vector2(1987, 965)
-scale = Vector2(11.52, 5.64)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Area2D"]
-position = Vector2(-316.146, 122.34)
-shape = SubResource("RectangleShape2D_6k1ke")
-debug_color = Color(1, 0.0426788, 0.320794, 0.42)
-
 [node name="Player" parent="." instance=ExtResource("1_fk75c")]
-position = Vector2(630, 803)
-scale = Vector2(1.5, 1.5)
+position = Vector2(974, 667)
 
 [node name="GUITest" type="CanvasLayer" parent="."]
 
@@ -141,101 +112,6 @@ icon = ExtResource("7_305xn")
 
 [node name="Control" parent="GUITest" instance=ExtResource("5_1ykic")]
 
-[connection signal="pressed" from="GUITest/Button" to="GUITest/Control" method="_on_button_pressed"]
-
-[node name="Plataforma1" type="Node" parent="."]
-
-[node name="Plataforma7" parent="Plataforma1" instance=ExtResource("13_jhl6t")]
-position = Vector2(-646, 1044)
-
-[node name="Plataforma3" parent="Plataforma1" instance=ExtResource("14_hab61")]
-position = Vector2(758, 1068)
-
-[node name="Plataforma2" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
-position = Vector2(-810, 616)
-
-[node name="Plataforma4" parent="Plataforma1" instance=ExtResource("16_t0rq4")]
-position = Vector2(-1050, 328)
-
-[node name="Plataforma5" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
-position = Vector2(-766, 820)
-
-[node name="Plataforma6" parent="Plataforma1" instance=ExtResource("16_t0rq4")]
-position = Vector2(-778, 972)
-
-[node name="Plataforma8" parent="Plataforma1" instance=ExtResource("13_y2kvl")]
-position = Vector2(-434, 1020)
-
-[node name="Plataforma11" parent="Plataforma1" instance=ExtResource("13_jhl6t")]
-position = Vector2(-250, 1044)
-
-[node name="Plataforma1" parent="Plataforma1" instance=ExtResource("13_y2kvl")]
-position = Vector2(568, 1032)
-
-[node name="Plataforma10" parent="Plataforma1" instance=ExtResource("13_y2kvl")]
-position = Vector2(-34, 1032)
-scale = Vector2(1.30426, 1)
-
-[node name="Plataforma9" parent="Plataforma1" instance=ExtResource("13_y2kvl")]
-position = Vector2(386, 1032)
-rotation = -3.14159
-scale = Vector2(1.14204, -1)
-
-[node name="Plataforma12" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
-position = Vector2(202, 1048)
-
-[node name="StaticBody2D" parent="Plataforma1" instance=ExtResource("18_8otr3")]
-position = Vector2(-418, 760)
-
-[node name="Plataforma14" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
-position = Vector2(-844, 401)
-
-[node name="Plataforma13" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
-visible = false
-position = Vector2(-862, 412)
-
-[node name="Plataforma2" type="Node" parent="."]
-
-[node name="Plataforma6" parent="Plataforma2" instance=ExtResource("13_jhl6t")]
-position = Vector2(-2307, 806)
-scale = Vector2(2.41527, 1.64677)
-
-[node name="Plataforma3" type="Node" parent="."]
-
-[node name="StaticBody2D" parent="Plataforma3" instance=ExtResource("18_8otr3")]
-position = Vector2(-4378, 328)
-scale = Vector2(2.27332, 1.70045)
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(120, 80)
-motion_scale = Vector2(0, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(416, 184)
-scale = Vector2(0.410482, 0.459075)
-texture = ExtResource("10_fep4g")
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(112, 344)
-motion_scale = Vector2(0.5, 0.5)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(497, 281)
-scale = Vector2(0.388847, 0.525504)
-texture = ExtResource("11_x5ynw")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(224, 736)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(181, 186)
-scale = Vector2(0.64307, 0.655842)
-texture = ExtResource("12_bpy6b")
-
-[connection signal="area_entered" from="Enemies/Area2D" to="." method="_on_area_2d_area_entered"]
-=======
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("CanvasItemMaterial_t2xou")
 offset_left = -883.0
@@ -247,3 +123,5 @@ color = Color(0.647348, 0.739578, 0.99264, 0.337255)
 
 [node name="2024-06-20Bg04Background" type="Sprite2D" parent="."]
 position = Vector2(842, 835)
+
+[connection signal="pressed" from="GUITest/Button" to="GUITest/Control" method="_on_button_pressed"]
