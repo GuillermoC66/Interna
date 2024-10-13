@@ -11,8 +11,8 @@ func Enter():
 	stateMachine.can_move = false
 	stateMachine.can_dash = false
 	stateMachine.can_getHurt = false
-	knockbackTimer.start(0.3)
-	inmuneTimer.start(1.5)
+	knockbackTimer.start(0.2)
+	inmuneTimer.start(1.3)
 	playback.start("hurt")
 	knockback(stateMachine.DamagePosition)
 
