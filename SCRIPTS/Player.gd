@@ -38,7 +38,7 @@ func walkRun(velocidad, animacionAsignada):
 	if directionX:
 		spriteDirection()
 		velocity.x = directionX * velocidad
-		playback.travel("run")
+		playback.travel(animacionAsignada)
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidad)
 		if velocity.y == 0:

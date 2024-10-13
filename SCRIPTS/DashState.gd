@@ -15,7 +15,7 @@ func Enter():
 	stateMachine.can_dash = false
 	stateMachine.can_getHurt = false
 	playback.travel("dash")
-	timer.start(0.6667)
+	timer.start(0.25)
 	start_trail()
 	makeDash()
 	

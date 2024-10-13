@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnx3taheiuf0v"
-path="res://.godot/imported/Miroarriba_0002.png-9befd62c47e05ce7be97f1744d67c26a.ctex"
+uid="uid://b01nhnp1cf1cn"
+path="res://.godot/imported/BG1 jueguin_2 COLORES.jpg-2f4592b53defb0c506eedbd80fd6ff22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SPRITES/AnimacionesPJ/09 Mirar arriba/Miroarriba_0002.png"
-dest_files=["res://.godot/imported/Miroarriba_0002.png-9befd62c47e05ce7be97f1744d67c26a.ctex"]
+source_file="res://TEXTURAS/ENVIRONMENT/BACKGROUND/BG1 jueguin_2 COLORES.jpg"
+dest_files=["res://.godot/imported/BG1 jueguin_2 COLORES.jpg-2f4592b53defb0c506eedbd80fd6ff22.ctex"]
 
 [params]
 
@@ -20,8 +20,8 @@ compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=1
-mipmaps/generate=true
+compress/channel_pack=0
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

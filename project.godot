@@ -18,7 +18,6 @@ config/icon="res://TEXTURAS/PERSONA5/icon.svg"
 [importer_defaults]
 
 texture={
-"compress/channel_pack": 1,
 "mipmaps/generate": true
 }
 
@@ -94,4 +93,3 @@ esc={
 [rendering]
 
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0.301961, 0.301961, 0.301961, 0)
