@@ -112,6 +112,104 @@ icon = ExtResource("7_305xn")
 
 [node name="Control" parent="GUITest" instance=ExtResource("5_1ykic")]
 
+<<<<<<< HEAD
+=======
+[connection signal="pressed" from="GUITest/Button" to="GUITest/Control" method="_on_button_pressed"]
+
+[node name="Plataforma1" type="Node" parent="."]
+
+[node name="Plataforma7" parent="Plataforma1" instance=ExtResource("13_jhl6t")]
+position = Vector2(-646, 1044)
+
+[node name="Plataforma3" parent="Plataforma1" instance=ExtResource("14_hab61")]
+position = Vector2(758, 1068)
+
+[node name="Plataforma2" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
+position = Vector2(-810, 616)
+
+[node name="Plataforma4" parent="Plataforma1" instance=ExtResource("16_t0rq4")]
+position = Vector2(-1050, 328)
+
+[node name="Plataforma5" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
+position = Vector2(-766, 820)
+
+[node name="Plataforma6" parent="Plataforma1" instance=ExtResource("16_t0rq4")]
+position = Vector2(-778, 972)
+
+[node name="Plataforma8" parent="Plataforma1" instance=ExtResource("13_y2kvl")]
+position = Vector2(-434, 1020)
+
+[node name="Plataforma11" parent="Plataforma1" instance=ExtResource("13_jhl6t")]
+position = Vector2(-250, 1044)
+
+[node name="Plataforma1" parent="Plataforma1" instance=ExtResource("13_y2kvl")]
+position = Vector2(568, 1032)
+
+[node name="Plataforma10" parent="Plataforma1" instance=ExtResource("13_y2kvl")]
+position = Vector2(-34, 1032)
+scale = Vector2(1.30426, 1)
+
+[node name="Plataforma9" parent="Plataforma1" instance=ExtResource("13_y2kvl")]
+position = Vector2(386, 1032)
+rotation = -3.14159
+scale = Vector2(1.14204, -1)
+
+[node name="Plataforma12" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
+position = Vector2(202, 1048)
+
+[node name="StaticBody2D" parent="Plataforma1" instance=ExtResource("18_8otr3")]
+position = Vector2(-418, 760)
+
+[node name="Plataforma14" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
+position = Vector2(-844, 401)
+
+[node name="Plataforma13" parent="Plataforma1" instance=ExtResource("15_yv3cp")]
+visible = false
+position = Vector2(-862, 412)
+
+[node name="Plataforma2" type="Node" parent="."]
+
+[node name="Plataforma6" parent="Plataforma2" instance=ExtResource("13_jhl6t")]
+position = Vector2(-2307, 806)
+scale = Vector2(2.41527, 1.64677)
+
+[node name="Plataforma3" type="Node" parent="."]
+
+[node name="StaticBody2D" parent="Plataforma3" instance=ExtResource("18_8otr3")]
+position = Vector2(-4378, 328)
+scale = Vector2(2.27332, 1.70045)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(120, 80)
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(416, 184)
+scale = Vector2(0.410482, 0.459075)
+texture = ExtResource("10_fep4g")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(112, 344)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(497, 281)
+scale = Vector2(0.388847, 0.525504)
+texture = ExtResource("11_x5ynw")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(224, 736)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(181, 186)
+scale = Vector2(0.64307, 0.655842)
+texture = ExtResource("12_bpy6b")
+
+[connection signal="area_entered" from="Enemies/Area2D" to="." method="_on_area_2d_area_entered"]
+=======
+>>>>>>> parent of 4ff88d3 (Update elmundo.tscn)
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("CanvasItemMaterial_t2xou")
 offset_left = -883.0
