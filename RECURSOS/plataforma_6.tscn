@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://boecmxapipbmx"]
+
+[ext_resource type="Texture2D" uid="uid://dpy4t37g2v4m8" path="res://TEXTURAS/ENVIRONMENT/FOREGROUND/Plataforma/Aire/2024-05-30 flota izq.png" id="1_nfrjk"]
+
+[node name="Plataforma6" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nfrjk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(99, 100, 114, 78, 84, -96, -130, -92, -100, -28, -62, -20, -31, 56)

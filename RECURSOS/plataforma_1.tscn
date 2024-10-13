@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://7jh3vqwh3jx8"]
+
+[ext_resource type="Texture2D" uid="uid://cdixtkt5fyaf8" path="res://TEXTURAS/ENVIRONMENT/FOREGROUND/Plataforma/Piso/2024-05-30 Centro.png" id="1_tuij7"]
+
+[node name="Plataforma1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tuij7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(45, 98)
+polygon = PackedVector2Array(75, -36, 63, -160, -55, -171, -125, -193, -161, -176, -163, -91, -103, -3, -2, 3)

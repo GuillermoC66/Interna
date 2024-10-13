@@ -2,18 +2,20 @@ extends CharacterBody2D
 #Nodos necesarios
 @onready var animacion : AnimationTree = $AnimationTree
 @onready var hitboxDash : Area2D = $HitboxDash
-#@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
 @onready var stateMachine : StateMachine = $StateMachine
 @onready var camera : Camera2D = $Camera2D
 
+#Movimiento
 var directionX : float = 0
 var directionY : float = 0
-var playback
-var flipSprite = 1
 var velocidadCaminar : float = 410
 var velocidadCorrer : float = 700
-var life = 5
+
+#Animacion
+var playback
+var flipSprite = 1
+var life = 3
 
 func _ready():
 	hitboxDash.scale = Vector2(0.1, 0.1)
@@ -63,3 +65,7 @@ func animacionesJump():
 func moveCamera(direccion):
 	if (camera.position != Vector2(-145, 0) && flipSprite == -1) && (camera.position != Vector2(145, 0) && flipSprite == 1):
 		camera.position += direccion * Vector2(100, 0) * 0.5
+		
+func die():
+	print("me mori")
+	#poner animaciones de muerte y demas.

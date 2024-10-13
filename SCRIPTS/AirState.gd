@@ -4,6 +4,11 @@ class_name AirState
 
 @export var groundState : StatePlayer
 @export var dashState : StatePlayer
+@onready var coyoteTime : Timer = $Timer
+
+func Enter():
+	coyoteTime.start(0.15)
+	stateMachine.coyote_jump = true
 
 func state_process(delta):
 	if (!character.is_on_floor()):
@@ -14,10 +19,18 @@ func state_process(delta):
 		Transition.emit(self, groundState)
 
 func state_input(event : InputEvent):	
+	if Input.is_action_just_pressed("ui_select") and stateMachine.coyote_jump:
+		jump()
 	if(event.is_action_pressed("dash") and stateMachine.can_dash):
 		Transition.emit(self, dashState)
+
+func jump():
+	character.velocity.y = jump_velocity
+	stateMachine.coyote_jump = false
 
 func stopJump():
 	if !Input.is_action_pressed("ui_select") && character.velocity.y < 0:
 		character.velocity.y = 0
 	
+func _on_timer_timeout():
+	stateMachine.coyote_jump = false

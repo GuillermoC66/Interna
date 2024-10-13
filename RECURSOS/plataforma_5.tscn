@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://du4m0hq8unsvc"]
+
+[ext_resource type="Texture2D" uid="uid://ve33mt18tdny" path="res://TEXTURAS/ENVIRONMENT/FOREGROUND/Plataforma/Aire/2024-05-30 flota der.png" id="1_tppft"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tppft")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(19, 99, 39, 24, 88, 15, 84, -51, 118, -63, 125, -88, -12, -86, -109, -76, -124, -44, -90, -17, -64, 92)
