@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dk8nrpixe5323"]
 
-[ext_resource type="Script" path="res://ESCENAS/StartMenu.gd" id="1_01i1c"]
+[ext_resource type="Script" path="res://SCRIPTS/StartMenu.gd" id="1_01i1c"]
 [ext_resource type="Texture2D" uid="uid://d3c48xy8hr46h" path="res://RECURSOS/backchido2.bmp" id="2_fhhi1"]
 [ext_resource type="Texture2D" uid="uid://cjqpwybrggg12" path="res://RECURSOS/backchido.bmp" id="3_v7mmk"]
 

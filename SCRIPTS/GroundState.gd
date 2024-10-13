@@ -7,11 +7,12 @@ class_name GroundState
 @export var dashState : StatePlayer
 @export var camara : Camera2D
 @export var hurtbox : Area2D
+@onready var timer : Timer = $Timer
 
 #CollisionShapes para agacharse
 var shape_stand = preload("res://RECURSOS/collisionStand.tres")
 var shape_crouch = preload("res://RECURSOS/collisionCrouch.tres")
-@onready var timer : Timer = $Timer
+
 var movimiento = Vector2(0, 150)
 var direccion
 
@@ -37,7 +38,7 @@ func state_input(event : InputEvent):
 
 #Salto	
 func jump():
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("ui_select") and stateMachine.can_move:
 		character.velocity.y = jump_velocity
 	
 #Cambiar CollisionShape		

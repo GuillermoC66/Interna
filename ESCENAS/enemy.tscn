@@ -32,5 +32,6 @@ shape = SubResource("RectangleShape2D_jg08j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CircleShape2D_5iqbu")
+debug_color = Color(0.927135, 3.91784e-05, 0.669725, 0.42)
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
