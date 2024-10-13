@@ -1,6 +1,6 @@
 extends Control
 
-@onready var test_level = preload("res://ESCENAS/elmundo.tscn") as PackedScene
+@onready var test_level = preload("res://ESCENAS/test.tscn") as PackedScene
 @onready var startButton : Button = $PanelContainer/VBoxContainer/StartButton
 @onready var quitButton : Button = $PanelContainer/VBoxContainer/QuitButton
 

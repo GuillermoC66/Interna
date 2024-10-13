@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d0np8bpt4251w" path="res://SPRITES/AnimacionesPJ/07 Agachar/Crouch_0004.png" id="6_1c24m"]
 [ext_resource type="Texture2D" uid="uid://cybhln526gk5p" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_06.png" id="6_ffh5r"]
 [ext_resource type="Texture2D" uid="uid://cuuw64cf0i1re" path="res://SPRITES/AnimacionesPJ/03 Correr/CORRER_01.png" id="6_ogbu2"]
-[ext_resource type="Texture2D" uid="uid://xwcbviognfl1" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_03.png" id="6_uydsq"]
+[ext_resource type="Texture2D" uid="uid://xwcbviognfl1" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_04.png" id="6_uydsq"]
 [ext_resource type="Texture2D" uid="uid://y2hx3dppwu5g" path="res://SPRITES/AnimacionesPJ/03 Correr/CORRER_03.png" id="7_4fg3q"]
 [ext_resource type="Texture2D" uid="uid://bpvxgyt45041f" path="res://SPRITES/AnimacionesPJ/07 Agachar/Crouch_0005.png" id="7_uykdf"]
 [ext_resource type="Texture2D" uid="uid://dbtj3sd15830y" path="res://SPRITES/AnimacionesPJ/03 Correr/CORRER_04.png" id="8_cxhxf"]
@@ -443,6 +443,10 @@ tracks/1/keys = {
 "values": [6, 7, 8, 9, 10, 11, 12]
 }
 
+[sub_resource type="Animation" id="Animation_7dp0g"]
+resource_name = "tocarpiso"
+step = 0.0416667
+
 [sub_resource type="Animation" id="Animation_3juwm"]
 resource_name = "transCrouch"
 length = 0.0416709
@@ -529,10 +533,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
-
-[sub_resource type="Animation" id="Animation_7dp0g"]
-resource_name = "tocarpiso"
-step = 0.0416667
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c7im1"]
 _data = {
