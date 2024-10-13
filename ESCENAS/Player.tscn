@@ -380,10 +380,6 @@ tracks/1/keys = {
 "values": [6, 7, 8, 9, 10, 11, 12]
 }
 
-[sub_resource type="Animation" id="Animation_7dp0g"]
-resource_name = "tocarpiso"
-step = 0.0416667
-
 [sub_resource type="Animation" id="Animation_3juwm"]
 resource_name = "transCrouch"
 length = 0.0416709
