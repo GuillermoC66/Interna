@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://l7tk2tc6pi66"]
+
+[ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/Player.tscn" id="1_0rmy5"]
+[ext_resource type="Texture2D" uid="uid://du6gff25olw4j" path="res://TEXTURAS/tuto again.png" id="1_q3j0q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47b3y"]
+size = Vector2(1354.5, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21whg"]
+size = Vector2(1123, 218.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvkgv"]
+size = Vector2(1596, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dtas"]
+size = Vector2(472, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m4o3"]
+size = Vector2(1189, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yjrk"]
+size = Vector2(1004, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chtmj"]
+size = Vector2(317, 105)
+
+[node name="Tutorial" type="Node2D"]
+position = Vector2(1065, 133)
+
+[node name="TutoAgain" type="Sprite2D" parent="."]
+modulate = Color(0.250166, 0.131094, 0.526006, 1)
+position = Vector2(-3053, -1907)
+scale = Vector2(3, 3)
+texture = ExtResource("1_q3j0q")
+
+[node name="Player" parent="." instance=ExtResource("1_0rmy5")]
+position = Vector2(-2722, 3.99994)
+
+[node name="Layout" type="Node2D" parent="."]
+
+[node name="PisoPt1" type="StaticBody2D" parent="Layout"]
+position = Vector2(944, 169)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/PisoPt1"]
+position = Vector2(1798.35, -165.1)
+shape = SubResource("RectangleShape2D_47b3y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layout/PisoPt1"]
+position = Vector2(1395.6, -277.1)
+polygon = PackedVector2Array(200, 7, -233, -60, -608, -94, -932, -134, -1159, -134, -1335.6, 227.1, -255.6, 251.1, -205.017, 83.1149)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Layout/PisoPt1"]
+position = Vector2(2356.6, -165.1)
+polygon = PackedVector2Array(-8, 5, 114, -111, 229, -96, 300, 32, 272, 148, 12, 136)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Layout/PisoPt1"]
+position = Vector2(-401, -299)
+shape = SubResource("RectangleShape2D_47b3y")
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Layout/PisoPt1"]
+position = Vector2(-536, -354)
+polygon = PackedVector2Array(-12, -42, -328, -74, -532, -90, -724, -130, -944, -142, -1056, -106, -1100, 10, -1228, 298, -234, 238, -184, 226, -112, 110)
+
+[node name="Piso Pt2" type="StaticBody2D" parent="Layout"]
+position = Vector2(944, 133)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Layout/Piso Pt2"]
+position = Vector2(-4431, -283)
+polygon = PackedVector2Array(285, 277, -288, 351, -561, -13, -997, -76, -1025, -376, -649, -357, -345, -389, -64.9995, -382, -47.9995, -313, 32.0005, -57, 120, 143, 158, 214)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Layout/Piso Pt2"]
+position = Vector2(-1981.5, 36.25)
+shape = SubResource("RectangleShape2D_21whg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Layout/Piso Pt2"]
+position = Vector2(-3666, 69)
+shape = SubResource("RectangleShape2D_yvkgv")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Layout/Piso Pt2"]
+position = Vector2(-2739, 126)
+shape = SubResource("RectangleShape2D_5dtas")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Layout/Piso Pt2"]
+position = Vector2(-4863.5, -620.5)
+shape = SubResource("RectangleShape2D_3m4o3")
+
+[node name="Piso Pt3" type="StaticBody2D" parent="Layout"]
+position = Vector2(-6128, -498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/Piso Pt3"]
+position = Vector2(433, -88)
+shape = SubResource("RectangleShape2D_1yjrk")
+
+[node name="PlataformaUno" type="StaticBody2D" parent="Layout"]
+position = Vector2(-3119, -125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/PlataformaUno"]
+position = Vector2(143, -36)
+shape = SubResource("RectangleShape2D_chtmj")
+
+[node name="Dash" type="Line2D" parent="."]
+position = Vector2(-5175, -554)
+points = PackedVector2Array(0, 0, 700, 0)
+width = 20.0
+default_color = Color(0.54902, 0.984314, 0, 1)
+
+[node name="Salto" type="Line2D" parent="."]
+position = Vector2(-4986, -606)
+points = PackedVector2Array(0, 0, 500, 0)
+width = 20.0
+default_color = Color(1, 0.054902, 0.509804, 1)
+
+[node name="Altura Salto" type="Line2D" parent="."]
+position = Vector2(-2719, -261)
+points = PackedVector2Array(0, 0, 0, 370)
+width = 20.0
+default_color = Color(0.0509804, 0.137255, 1, 1)
+
+[node name="SaltoCorto" type="Line2D" parent="."]
+position = Vector2(-1914, -104)
+points = PackedVector2Array(0, 0, 250, 0)
+width = 20.0
+default_color = Color(0.0509804, 0.137255, 1, 1)
