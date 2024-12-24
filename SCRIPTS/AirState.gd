@@ -31,6 +31,7 @@ func jump():
 func stopJump():
 	if !Input.is_action_pressed("ui_select") && character.velocity.y < 0:
 		character.velocity.y = 0
+		
 	
 func _on_timer_timeout():
 	stateMachine.coyote_jump = false

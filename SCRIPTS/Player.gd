@@ -61,6 +61,7 @@ func animacionesJump():
 		playback.travel("jump")
 	elif(velocity.y > 0):
 		playback.travel("fall")
+		
 
 func moveCamera(direccion):
 	if (camera.position != Vector2(-145, 0) && flipSprite == -1) && (camera.position != Vector2(145, 0) && flipSprite == 1):
