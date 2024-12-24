@@ -15,6 +15,11 @@ run/main_scene="res://ESCENAS/StartMenu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://TEXTURAS/PERSONA5/icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [importer_defaults]
 
 texture={

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://siqe7p0g0xl8"]
+[gd_scene load_steps=43 format=3 uid="uid://siqe7p0g0xl8"]
 
 [ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/Player.tscn" id="1_0ygna"]
 [ext_resource type="Texture2D" uid="uid://bia4dswucx4o3" path="res://TEXTURAS/Testeo/Capa 1/Relleno.png" id="1_ng7w7"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://dhoh3et3c175x" path="res://TEXTURAS/Testeo/Capa 2/Techo 1.png" id="31_yqhlq"]
 [ext_resource type="Texture2D" uid="uid://ct8t75jolv8ky" path="res://TEXTURAS/Testeo/Capa 2/Techo 2.png" id="32_3uyps"]
 [ext_resource type="Texture2D" uid="uid://foh07y2ouq4a" path="res://TEXTURAS/Testeo/Capa 2/Columna 2.png" id="33_m1js6"]
+[ext_resource type="AudioStream" uid="uid://brd86vs2s230s" path="res://AUDIO/CANCIONES POR NIVEL/TUTORIAL/Master motivo personaje inicio v2.wav" id="37_4li2c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qv6rq"]
 atlas = ExtResource("1_qmphp")
@@ -833,3 +834,7 @@ texture = ExtResource("29_tjuqt")
 [node name="Picos4" type="Sprite2D" parent="F 2/Node2D"]
 position = Vector2(1078.13, -573.125)
 texture = ExtResource("27_w6n6n")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("37_4li2c")
+autoplay = true

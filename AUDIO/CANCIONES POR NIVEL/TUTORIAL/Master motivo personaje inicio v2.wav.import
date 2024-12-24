@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brd86vs2s230s"
+path="res://.godot/imported/Master motivo personaje inicio v2.wav-aa145296c91d0d1c064577186361da32.sample"
+
+[deps]
+
+source_file="res://AUDIO/CANCIONES POR NIVEL/TUTORIAL/Master motivo personaje inicio v2.wav"
+dest_files=["res://.godot/imported/Master motivo personaje inicio v2.wav-aa145296c91d0d1c064577186361da32.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
