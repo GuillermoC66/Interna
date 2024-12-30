@@ -36,7 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://dhoh3et3c175x" path="res://TEXTURAS/Testeo/Capa 2/Techo 1.png" id="31_yqhlq"]
 [ext_resource type="Texture2D" uid="uid://ct8t75jolv8ky" path="res://TEXTURAS/Testeo/Capa 2/Techo 2.png" id="32_3uyps"]
 [ext_resource type="Texture2D" uid="uid://foh07y2ouq4a" path="res://TEXTURAS/Testeo/Capa 2/Columna 2.png" id="33_m1js6"]
-[ext_resource type="AudioStream" uid="uid://brd86vs2s230s" path="res://AUDIO/CANCIONES POR NIVEL/TUTORIAL/Master motivo personaje inicio v2.wav" id="37_4li2c"]
+[ext_resource type="AudioStream" uid="uid://lceryduv2wxu" path="res://AUDIO/CANCIONES POR NIVEL/00 TUTORIAL/POR PARTES/Master OST 01 Pt1.wav" id="37_wae0v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qv6rq"]
 atlas = ExtResource("1_qmphp")
@@ -352,7 +352,7 @@ texture = ExtResource("8_7rfhj")
 
 [node name="Player" parent="." instance=ExtResource("1_0ygna")]
 z_index = 1
-position = Vector2(1052, -179)
+position = Vector2(1927, -185)
 scale = Vector2(2, 2)
 
 [node name="Zona Interactiva" type="Node2D" parent="."]
@@ -836,5 +836,5 @@ position = Vector2(1078.13, -573.125)
 texture = ExtResource("27_w6n6n")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("37_4li2c")
+stream = ExtResource("37_wae0v")
 autoplay = true

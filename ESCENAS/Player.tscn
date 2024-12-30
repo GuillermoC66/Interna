@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://cka2icva25c4q"]
+[gd_scene load_steps=148 format=3 uid="uid://cka2icva25c4q"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Player.gd" id="1_5qni1"]
 [ext_resource type="Shape2D" uid="uid://dacdhcjw367h" path="res://RECURSOS/collisionStand.tres" id="1_u1gde"]
@@ -909,6 +909,9 @@ animation = &"run"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kd5rr"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h1d7i"]
+animation = &"tocarpiso"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t8nng"]
 animation = &"transCrouch"
 
@@ -951,12 +954,6 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rs1du"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0ls42"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jbu0a"]
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_385kg"]
 switch_mode = 2
 advance_mode = 2
@@ -977,19 +974,27 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aqqc5"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e0qk6"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8kjqp"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_37bj0"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_pkx8b"]
 states/End/position = Vector2(860, 21.5106)
 states/IdleToWalk/node = SubResource("AnimationNodeAnimation_70lj0")
-states/IdleToWalk/position = Vector2(290.592, -114.245)
+states/IdleToWalk/position = Vector2(310.373, -123.447)
 states/Start/position = Vector2(-13.3829, 21.4696)
 states/WalkToRun/node = SubResource("AnimationNodeAnimation_r78ws")
-states/WalkToRun/position = Vector2(219.926, -41.6297)
+states/WalkToRun/position = Vector2(309.778, -6.29637)
 states/crouch/node = SubResource("AnimationNodeAnimation_l142k")
 states/crouch/position = Vector2(133.259, 143.741)
 states/dash/node = SubResource("AnimationNodeAnimation_ykng6")
 states/dash/position = Vector2(-130.741, -95.6959)
 states/fall/node = SubResource("AnimationNodeAnimation_tn30q")
-states/fall/position = Vector2(211.926, -188.967)
+states/fall/position = Vector2(155.259, -198.716)
 states/hurt/node = SubResource("AnimationNodeAnimation_a350r")
 states/hurt/position = Vector2(-131.004, 61.9436)
 states/idle/node = SubResource("AnimationNodeAnimation_flk56")
@@ -999,17 +1004,19 @@ states/jump/position = Vector2(50.5923, -123.633)
 states/lookup/node = SubResource("AnimationNodeAnimation_21172")
 states/lookup/position = Vector2(427.926, 142.54)
 states/run/node = SubResource("AnimationNodeAnimation_g5w43")
-states/run/position = Vector2(391.037, -41.2292)
+states/run/position = Vector2(499.704, -58.5625)
 states/stop/node = SubResource("AnimationNodeAnimation_kd5rr")
 states/stop/position = Vector2(399.259, 36.2174)
+states/tocarpiso/node = SubResource("AnimationNodeAnimation_h1d7i")
+states/tocarpiso/position = Vector2(297.716, -208.839)
 states/transCrouch/node = SubResource("AnimationNodeAnimation_t8nng")
 states/transCrouch/position = Vector2(-14.741, 143.741)
 states/transLookUp/node = SubResource("AnimationNodeAnimation_414qi")
 states/transLookUp/position = Vector2(277.704, 145.207)
 states/walk/node = SubResource("AnimationNodeAnimation_h2w5o")
-states/walk/position = Vector2(461.259, -114.492)
-transitions = ["transLookUp", "lookup", SubResource("AnimationNodeStateMachineTransition_3fo27"), "transCrouch", "crouch", SubResource("AnimationNodeStateMachineTransition_cib5d"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_4acyx"), "idle", "WalkToRun", SubResource("AnimationNodeStateMachineTransition_8043r"), "WalkToRun", "run", SubResource("AnimationNodeStateMachineTransition_3axrb"), "run", "stop", SubResource("AnimationNodeStateMachineTransition_2g62l"), "stop", "idle", SubResource("AnimationNodeStateMachineTransition_a0qfj"), "idle", "transCrouch", SubResource("AnimationNodeStateMachineTransition_dpbia"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_j326n"), "idle", "transLookUp", SubResource("AnimationNodeStateMachineTransition_sl0b2"), "lookup", "idle", SubResource("AnimationNodeStateMachineTransition_8xvju"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_rs1du"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_0ls42"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_jbu0a"), "IdleToWalk", "walk", SubResource("AnimationNodeStateMachineTransition_385kg"), "idle", "IdleToWalk", SubResource("AnimationNodeStateMachineTransition_uxlg7"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_uyne2"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_vvrie"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_olx4d"), "jump", "dash", SubResource("AnimationNodeStateMachineTransition_0e41x"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_rn5lj"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_3srqm"), "run", "dash", SubResource("AnimationNodeStateMachineTransition_aqqc5")]
-graph_offset = Vector2(-563.951, -127.506)
+states/walk/position = Vector2(498.444, -125.253)
+transitions = ["transLookUp", "lookup", SubResource("AnimationNodeStateMachineTransition_3fo27"), "transCrouch", "crouch", SubResource("AnimationNodeStateMachineTransition_cib5d"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_4acyx"), "idle", "WalkToRun", SubResource("AnimationNodeStateMachineTransition_8043r"), "WalkToRun", "run", SubResource("AnimationNodeStateMachineTransition_3axrb"), "run", "stop", SubResource("AnimationNodeStateMachineTransition_2g62l"), "stop", "idle", SubResource("AnimationNodeStateMachineTransition_a0qfj"), "idle", "transCrouch", SubResource("AnimationNodeStateMachineTransition_dpbia"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_j326n"), "idle", "transLookUp", SubResource("AnimationNodeStateMachineTransition_sl0b2"), "lookup", "idle", SubResource("AnimationNodeStateMachineTransition_8xvju"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_rs1du"), "IdleToWalk", "walk", SubResource("AnimationNodeStateMachineTransition_385kg"), "idle", "IdleToWalk", SubResource("AnimationNodeStateMachineTransition_uxlg7"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_uyne2"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_vvrie"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_olx4d"), "jump", "dash", SubResource("AnimationNodeStateMachineTransition_0e41x"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_rn5lj"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_3srqm"), "run", "dash", SubResource("AnimationNodeStateMachineTransition_aqqc5"), "tocarpiso", "idle", SubResource("AnimationNodeStateMachineTransition_e0qk6"), "fall", "tocarpiso", SubResource("AnimationNodeStateMachineTransition_8kjqp"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_37bj0")]
+graph_offset = Vector2(-419.951, -128.506)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2.5, 2.5)
