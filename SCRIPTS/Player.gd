@@ -9,8 +9,8 @@ extends CharacterBody2D
 #Movimiento
 var directionX : float = 0
 var directionY : float = 0
-var velocidadCaminar : float = 410
-var velocidadCorrer : float = 700
+var velocidadCaminar : float = 250
+var velocidadCorrer : float = 800
 
 #Animacion
 var playback
@@ -38,7 +38,10 @@ func walkRun(velocidad, animacionAsignada):
 	if directionX:
 		spriteDirection()
 		velocity.x = directionX * velocidad
-		playback.travel("run")
+		if velocity.x ==800 || velocity.x == -800:
+			playback.travel("run")
+		else:
+			playback.travel("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidad)
 		if velocity.y == 0:

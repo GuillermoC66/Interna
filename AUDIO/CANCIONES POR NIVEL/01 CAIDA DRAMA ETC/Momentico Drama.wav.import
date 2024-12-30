@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8jk87d1ir2ea"
+path="res://.godot/imported/Momentico Drama.wav-47083ad276b48956510f90203386741d.sample"
+
+[deps]
+
+source_file="res://AUDIO/CANCIONES POR NIVEL/01 CAIDA DRAMA ETC/Momentico Drama.wav"
+dest_files=["res://.godot/imported/Momentico Drama.wav-47083ad276b48956510f90203386741d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
