@@ -89,11 +89,11 @@
 [ext_resource type="Texture2D" uid="uid://dqgn5cddgbqvg" path="res://SPRITES/AnimacionesPJ/09 Mirar arriba/Miroarriba_0013.png" id="63_jd3o8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtgnn"]
-radius = 24.5
-height = 82.0
+radius = 138.0
+height = 410.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buqgf"]
-size = Vector2(29, 54)
+size = Vector2(148, 312)
 
 [sub_resource type="Animation" id="Animation_um1sm"]
 resource_name = "IdleToWalk"
@@ -966,29 +966,28 @@ states/run/position = Vector2(391.037, -41.2292)
 states/stop/node = SubResource("AnimationNodeAnimation_kd5rr")
 states/stop/position = Vector2(399.259, 36.2174)
 states/transCrouch/node = SubResource("AnimationNodeAnimation_t8nng")
-states/transCrouch/position = Vector2(-14.741, 143.741)
+states/transCrouch/position = Vector2(-12.9302, 143.741)
 states/transLookUp/node = SubResource("AnimationNodeAnimation_414qi")
 states/transLookUp/position = Vector2(277.704, 145.207)
 states/walk/node = SubResource("AnimationNodeAnimation_h2w5o")
 states/walk/position = Vector2(461.259, -113.8)
 transitions = ["transLookUp", "lookup", SubResource("AnimationNodeStateMachineTransition_3fo27"), "transCrouch", "crouch", SubResource("AnimationNodeStateMachineTransition_cib5d"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_4acyx"), "idle", "WalkToRun", SubResource("AnimationNodeStateMachineTransition_8043r"), "WalkToRun", "run", SubResource("AnimationNodeStateMachineTransition_3axrb"), "run", "stop", SubResource("AnimationNodeStateMachineTransition_2g62l"), "stop", "idle", SubResource("AnimationNodeStateMachineTransition_a0qfj"), "idle", "transCrouch", SubResource("AnimationNodeStateMachineTransition_dpbia"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_j326n"), "idle", "transLookUp", SubResource("AnimationNodeStateMachineTransition_sl0b2"), "lookup", "idle", SubResource("AnimationNodeStateMachineTransition_8xvju"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_rs1du"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_0ls42"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_jbu0a"), "IdleToWalk", "walk", SubResource("AnimationNodeStateMachineTransition_385kg"), "idle", "IdleToWalk", SubResource("AnimationNodeStateMachineTransition_uxlg7"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_uyne2"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_vvrie"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_olx4d"), "jump", "dash", SubResource("AnimationNodeStateMachineTransition_0e41x"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_rn5lj"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_3srqm"), "run", "dash", SubResource("AnimationNodeStateMachineTransition_aqqc5")]
-graph_offset = Vector2(-563.951, -127.506)
+graph_offset = Vector2(-563.951, 44.5269)
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(2.5, 2.5)
 script = ExtResource("1_5qni1")
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["Player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, 4)
+position = Vector2(0, 30)
 shape = SubResource("CapsuleShape2D_xtgnn")
 
 [node name="HitboxDash" type="Area2D" parent="." groups=["HitboxDash"]]
 position = Vector2(0.5, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxDash"]
-position = Vector2(0.5, 0)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_buqgf")
 debug_color = Color(0.947641, 2.31028e-06, 0.582125, 0.42)
 
@@ -1002,14 +1001,8 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ghlx7")
 animation = &"jump"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-145, 0)
-offset = Vector2(200, 0)
-position_smoothing_enabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_pkx8b")
@@ -1022,11 +1015,10 @@ animacion = NodePath("../AnimationTree")
 current_state = NodePath("Ground")
 hurt_state = NodePath("Hurt")
 
-[node name="Ground" type="Node" parent="StateMachine" node_paths=PackedStringArray("airState", "dashState", "camara", "hurtbox", "stateMachine")]
+[node name="Ground" type="Node" parent="StateMachine" node_paths=PackedStringArray("airState", "dashState", "hurtbox", "stateMachine")]
 script = ExtResource("33_av4f8")
 airState = NodePath("../Air")
 dashState = NodePath("../Dash")
-camara = NodePath("../../Camera2D")
 hurtbox = NodePath("../../Hurtbox")
 stateMachine = NodePath("..")
 
@@ -1040,15 +1032,12 @@ groundState = NodePath("../Ground")
 dashState = NodePath("../Dash")
 stateMachine = NodePath("..")
 
-[node name="Timer" type="Timer" parent="StateMachine/Air"]
-
 [node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("canDashAgain", "groundState", "airState", "hitbox", "stateMachine")]
 script = ExtResource("36_jots7")
 canDashAgain = NodePath("../Can Dash Again")
 groundState = NodePath("../Ground")
 airState = NodePath("../Air")
 hitbox = NodePath("../../HitboxDash")
-dash_Velocity = 1700.0
 stateMachine = NodePath("..")
 
 [node name="DashTime" type="Timer" parent="StateMachine/Dash"]
@@ -1068,11 +1057,13 @@ one_shot = true
 
 [node name="Inmunity" type="Timer" parent="StateMachine"]
 
+[node name="Coyote" type="Timer" parent="StateMachine"]
+
 [connection signal="area_entered" from="Hurtbox" to="StateMachine" method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="HitboxDash" to="StateMachine/Dash" method="_on_hitbox_dash_area_entered"]
 [connection signal="timeout" from="StateMachine/Ground/Timer" to="StateMachine/Ground" method="_on_timer_timeout"]
-[connection signal="timeout" from="StateMachine/Air/Timer" to="StateMachine/Air" method="_on_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Dash/DashTime" to="StateMachine/Dash" method="_on_dash_time_timeout"]
 [connection signal="timeout" from="StateMachine/Hurt/Knockback" to="StateMachine/Hurt" method="_on_knockback_timeout"]
 [connection signal="timeout" from="StateMachine/Can Dash Again" to="StateMachine" method="_on_can_dash_again_timeout"]
 [connection signal="timeout" from="StateMachine/Inmunity" to="StateMachine" method="_on_inmunity_timeout"]
+[connection signal="timeout" from="StateMachine/Coyote" to="StateMachine/Air" method="_on_timer_timeout"]

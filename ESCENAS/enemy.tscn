@@ -15,7 +15,7 @@ radius = 66.0681
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_vmexh")
 
-[node name="Hitbox" type="Area2D" parent="." groups=["Hitbox"]]
+[node name="Hitbox" type="Area2D" parent="." groups=["HitboxEnemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_gmnfg")

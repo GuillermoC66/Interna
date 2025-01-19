@@ -10,7 +10,7 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.810458)
 colors = PackedColorArray(0.807843, 0, 0.207843, 1, 0.952349, 0.832635, 0.196077, 1)
 
-[node name="Trail" type="Line2D" node_paths=PackedStringArray("character")]
+[node name="Trail" type="Line2D"]
 z_index = -1
 width = 100.0
 width_curve = SubResource("Curve_m5mtf")
@@ -18,4 +18,3 @@ default_color = Color(1, 0.425399, 0.634778, 1)
 gradient = SubResource("Gradient_qta4k")
 script = ExtResource("1_jydss")
 maxLength = 20
-character = NodePath("")

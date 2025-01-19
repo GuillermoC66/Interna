@@ -1,0 +1,110 @@
+[gd_scene load_steps=11 format=3 uid="uid://dm0f6dxt6jtoy"]
+
+[ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/Player.tscn" id="1_7ob2v"]
+[ext_resource type="Script" path="res://prueba_cam.gd" id="1_x5gyv"]
+[ext_resource type="PackedScene" uid="uid://bqgcmv6deu1ds" path="res://ESCENAS/camera_2d.tscn" id="2_vouq8"]
+[ext_resource type="PackedScene" uid="uid://bhx1vrhqdbj7s" path="res://ESCENAS/limiteCamara.tscn" id="4_14x44"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8cmv"]
+size = Vector2(778.5, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctka1"]
+size = Vector2(6696, 69.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt6si"]
+size = Vector2(2234.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kopt"]
+size = Vector2(2225.13, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvv3v"]
+size = Vector2(1576.25, 1248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7bvf"]
+size = Vector2(1568, 930)
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("initial_camera_limiter")]
+script = ExtResource("1_x5gyv")
+initial_camera_limiter = NodePath("Limites/CameraLimit1")
+
+[node name="plataformas" type="StaticBody2D" parent="."]
+position = Vector2(312, 564)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="plataformas"]
+position = Vector2(1757, 767)
+shape = SubResource("RectangleShape2D_g8cmv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="plataformas"]
+position = Vector2(1504, 467)
+shape = SubResource("RectangleShape2D_g8cmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformas"]
+position = Vector2(868, 288)
+shape = SubResource("RectangleShape2D_g8cmv")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="plataformas"]
+position = Vector2(2421, 1238.25)
+shape = SubResource("RectangleShape2D_ctka1")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="plataformas"]
+position = Vector2(3796, 1190)
+shape = SubResource("RectangleShape2D_lt6si")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="plataformas"]
+position = Vector2(114, 288)
+shape = SubResource("RectangleShape2D_g8cmv")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="plataformas"]
+position = Vector2(2232, 1036)
+shape = SubResource("RectangleShape2D_g8cmv")
+
+[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_7ob2v")]
+position = Vector2(4956, 1444)
+scale = Vector2(2, 2)
+camera = NodePath("../Camera2D")
+
+[node name="Camera2D" parent="." instance=ExtResource("2_vouq8")]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4088.44, 1476)
+shape = SubResource("RectangleShape2D_4kopt")
+disabled = true
+debug_color = Color(0.839617, 0.282604, 0.660166, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2237.13, 1176)
+shape = SubResource("RectangleShape2D_dvv3v")
+debug_color = Color(0.577418, 0.524543, 0.488858, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(789, 460)
+shape = SubResource("RectangleShape2D_p7bvf")
+debug_color = Color(0.53219, 0.546273, 0.462014, 0.42)
+
+[node name="Limites" type="Node2D" parent="."]
+
+[node name="CameraLimit1" parent="Limites" instance=ExtResource("4_14x44")]
+position = Vector2(4088, 1331)
+limite_x = 2
+limite_y = 1
+
+[node name="CollisionShape2D" parent="Limites/CameraLimit1" index="0"]
+position = Vector2(-1043, 145)
+
+[node name="limite" parent="Limites/CameraLimit1" index="1"]
+position = Vector2(1030, -155)
+
+[node name="CameraLimit2" parent="Limites" instance=ExtResource("4_14x44")]
+position = Vector2(3941, 1342)
+limite_y = 2
+
+[node name="CollisionShape2D" parent="Limites/CameraLimit2" index="0"]
+position = Vector2(-1051, 0)
+
+[node name="limite" parent="Limites/CameraLimit2" index="1"]
+position = Vector2(-1051, 460)
+
+[editable path="Limites/CameraLimit1"]
+[editable path="Limites/CameraLimit2"]

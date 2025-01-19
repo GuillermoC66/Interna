@@ -1,16 +1,19 @@
 extends CharacterBody2D
+
+class_name Player
 #Nodos necesarios
 @onready var animacion : AnimationTree = $AnimationTree
 @onready var hitboxDash : Area2D = $HitboxDash
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
 @onready var stateMachine : StateMachine = $StateMachine
-@onready var camera : Camera2D = $Camera2D
+
+@export var camera : Camera2D
 
 #Movimiento
 var directionX : float = 0
 var directionY : float = 0
-var velocidadCaminar : float = 410
-var velocidadCorrer : float = 700
+var velocidadCaminar : float = 800
+var velocidadCorrer : float = 1700
 
 #Animacion
 var playback
@@ -38,7 +41,7 @@ func walkRun(velocidad, animacionAsignada):
 	if directionX:
 		spriteDirection()
 		velocity.x = directionX * velocidad
-		playback.travel("run")
+		playback.travel(animacionAsignada)
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidad)
 		if velocity.y == 0:
@@ -59,12 +62,12 @@ func spriteDirection():
 func animacionesJump():
 	if(velocity.y < 0):
 		playback.travel("jump")
-	elif(velocity.y > 0):
+	elif(velocity.y > 0) and !stateMachine.coyote_jump:
 		playback.travel("fall")
-
-func moveCamera(direccion):
-	if (camera.position != Vector2(-145, 0) && flipSprite == -1) && (camera.position != Vector2(145, 0) && flipSprite == 1):
-		camera.position += direccion * Vector2(100, 0) * 0.5
+		
+#func moveCamera(direccion):
+	#if (camera.position != Vector2(-145, 0) && flipSprite == -1) && (camera.position != Vector2(145, 0) && flipSprite == 1):
+	#	camera.position += direccion * Vector2(100, 0) * 0.5
 		
 func die():
 	print("me mori")

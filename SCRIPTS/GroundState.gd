@@ -5,7 +5,7 @@ class_name GroundState
 #Variables de lógica para salto
 @export var airState : StatePlayer
 @export var dashState : StatePlayer
-@export var camara : Camera2D
+#@export var camara : Camera2D
 @export var hurtbox : Area2D
 @onready var timer : Timer = $Timer
 
@@ -17,7 +17,8 @@ var movimiento = Vector2(0, 150)
 var direccion
 
 func Enter():
-	playback.travel("idle")
+	if !character.velocity:
+		playback.travel("idle")
 	
 func state_process(delta):
 	# Agregar gravedad a jugador
@@ -26,7 +27,8 @@ func state_process(delta):
 		Transition.emit(self, airState)
 
 func state_input(event : InputEvent):	
-	jump()	
+	if Input.is_action_just_pressed("ui_select") and stateMachine.can_move:
+		jump()
 	if(event.is_action_pressed("dash") and stateMachine.can_dash):
 		Transition.emit(self, dashState)
 	if(event.is_action_pressed("ui_up")):
@@ -35,14 +37,10 @@ func state_input(event : InputEvent):
 		crouch()
 	elif(event.is_action_released("ui_down") || event.is_action_released("ui_up") || event.is_action_pressed("ui_left") || event.is_action_pressed("ui_right")):
 		stopCrouch()
-
-#Salto	
-func jump():
-	if Input.is_action_just_pressed("ui_select") and stateMachine.can_move:
-		character.velocity.y = jump_velocity
 	
 #Cambiar CollisionShape		
 func crouch():
+	character.directionY = 1
 	detenerse()
 	hurtbox.position.y = 24
 	hurtbox.scale.y = 0.5
@@ -50,21 +48,21 @@ func crouch():
 	character.collision_shape.position.y = 25
 	playback.travel("transCrouch")
 	timer.start()
-	direccion = 1
-	timer.timeout.connect( _on_timer_timeout)
+	#timer.timeout.connect( _on_timer_timeout)
 
 #Mirar arriba	
 func lookUp():
+	character.directionY = -1
 	detenerse()
 	playback.travel("transLookUp")
 	timer.start()
-	direccion = -1
-	timer.timeout.connect( _on_timer_timeout)
+	#timer.timeout.connect( _on_timer_timeout)
 
 #Regresar la CollisionShape a su forma original		
 func stopCrouch():
+	character.directionY = 0
 	timer.stop()
-	character.camera.position= Vector2(-145, 0)
+	#character.camera.position= Vector2(-145, 0)
 	stateMachine.can_move = true
 	hurtbox.position.y = 0
 	hurtbox.scale.y = 1
@@ -75,5 +73,5 @@ func detenerse():
 	character.velocity.x = 0
 	stateMachine.can_move = false
 
-func _on_timer_timeout():
-	character.camera.position += direccion * movimiento * 0.9
+#func _on_timer_timeout():
+	#character.camera.position += direccion * movimiento * 0.9

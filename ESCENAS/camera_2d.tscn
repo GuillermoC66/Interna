@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqgcmv6deu1ds"]
+
+[ext_resource type="Script" path="res://camera_2d.gd" id="1_naak6"]
+[ext_resource type="Script" path="res://ESCENAS/manager_limit.gd" id="2_2t83k"]
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(4670, 1504)
+limit_left = 0
+limit_top = 0
+limit_right = 5200
+limit_bottom = 1800
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+editor_draw_limits = true
+script = ExtResource("1_naak6")
+
+[node name="ManagerLimit" type="Node2D" parent="."]
+script = ExtResource("2_2t83k")

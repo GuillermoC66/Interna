@@ -6,6 +6,7 @@ class_name StateMachine
 @export var animacion : AnimationTree
 @export var current_state : StatePlayer
 @export var hurt_state : StatePlayer
+@onready var coyoteTime : Timer = $Coyote
 
 #Booleanos
 var can_move : bool = true
@@ -46,14 +47,15 @@ func _input(event : InputEvent):
 
 #Al recibir daño, entra al estado Hurt
 func _on_hurtbox_area_entered(area):
-	if area.is_in_group("Hitbox") and can_getHurt:
+	if area.is_in_group("HitboxEnemy") and can_getHurt:
 		DamagePosition = area.global_position
-		if character.life > 1:
-			character.life -= 1
-			on_child_transition(current_state, hurt_state)
-		else:
-			character.life = 0
-			character.die()
+		on_child_transition(current_state, hurt_state)
+		#if character.life > 1:
+		#	character.life -= 1
+			#on_child_transition(current_state, hurt_state)
+		#else:
+		#	character.life = 0
+		#	character.die()
 		
 func _on_can_dash_again_timeout():
 	can_dash = true

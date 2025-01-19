@@ -8,14 +8,15 @@ class_name DashState
 @export var airState : StatePlayer
 @export var trailScene = preload("res://RECURSOS/PlayerTrail.tscn")
 @export var hitbox : Area2D
-@export var dash_Velocity : float
+@export var dash_Velocity : float = 4000
+
 var trail
 
 func Enter():
 	stateMachine.can_dash = false
 	stateMachine.can_getHurt = false
 	playback.travel("dash")
-	timer.start(0.45)
+	timer.start(0.4)
 	start_trail()
 	makeDash()
 	
@@ -24,7 +25,7 @@ func state_process(_delta):
 
 func _on_dash_time_timeout():
 	trail.queue_free()
-	hitbox.position = Vector2(0.5, 10)
+	hitbox.position.x = 0
 	if (character.is_on_floor()):
 		canDashAgain.start(1)
 		Transition.emit(self, groundState)
@@ -44,10 +45,7 @@ func start_trail():
 	add_child(trail)
 	trail.character = character
 	hitbox.scale = Vector2(1, 1)
-	if character.flipSprite == 1:
-		hitbox.position = Vector2(35.5, 1.5)
-	else:
-		hitbox.position = Vector2(-35.5, 1.5)
+	hitbox.position.x = character.flipSprite*160
 
 func _on_hitbox_dash_area_entered(area):
 	stateMachine.can_dash = true
