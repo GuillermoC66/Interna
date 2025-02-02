@@ -6,8 +6,7 @@ class_name Player
 @onready var hitboxDash : Area2D = $HitboxDash
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
 @onready var stateMachine : StateMachine = $StateMachine
-
-@export var camera : Camera2D
+@onready var camera : Camera2D = $Camera2D
 
 #Movimiento
 var directionX : float = 0

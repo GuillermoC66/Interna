@@ -1,55 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://l7tk2tc6pi66"]
+[gd_scene load_steps=27 format=3 uid="uid://l7tk2tc6pi66"]
 
 [ext_resource type="PackedScene" uid="uid://cka2icva25c4q" path="res://ESCENAS/Player.tscn" id="1_0rmy5"]
-[ext_resource type="Texture2D" uid="uid://du6gff25olw4j" path="res://TEXTURAS/tuto again.png" id="1_q3j0q"]
-[ext_resource type="Script" path="res://camera_tuto.gd" id="3_d3l3i"]
+[ext_resource type="PackedScene" uid="uid://c15ho5h08teu1" path="res://ESCENAS/colision_nivel_0.tscn" id="4_0uavq"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="4_inp3a"]
+[ext_resource type="PackedScene" uid="uid://0g0x5s3728bf" path="res://RECURSOS/medidas.tscn" id="4_lm227"]
 [ext_resource type="Script" path="res://SCRIPTS/debugLabel.gd" id="4_ycfj1"]
 [ext_resource type="PackedScene" uid="uid://buljphv8tli08" path="res://ESCENAS/enemy.tscn" id="6_8546j"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_47b3y"]
-size = Vector2(1746.9, 315.9)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_21whg"]
-size = Vector2(2913.5, 301)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvkgv"]
-size = Vector2(1596, 432)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5dtas"]
-size = Vector2(700, 75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m4o3"]
-size = Vector2(1236, 265)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_chtmj"]
-size = Vector2(528.5, 200.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_su5c8"]
-size = Vector2(1331, 297)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_02ork"]
-size = Vector2(1279.5, 210)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc4jx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yjrk"]
-size = Vector2(2118, 256)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjtmo"]
-size = Vector2(256, 2211)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0bhs"]
-size = Vector2(4574.38, 338.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6co6"]
-size = Vector2(339, 506.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ag5i"]
-size = Vector2(1008, 284)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fslf"]
-size = Vector2(874, 503)
+[ext_resource type="Script" path="res://camera_manager.gd" id="8_y4xrg"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="10_cranx"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="11_8sn7t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qs24p"]
 line_spacing = 2.0
@@ -59,190 +18,93 @@ font_color = Color(1, 1, 0.607843, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0d3m8"]
+size = Vector2(25, 2356)
+
+[sub_resource type="Resource" id="Resource_o3mhp"]
+script = ExtResource("11_8sn7t")
+duration = 1.5
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4mos"]
+size = Vector2(25, 1355.75)
+
+[sub_resource type="Resource" id="Resource_br0c6"]
+script = ExtResource("11_8sn7t")
+duration = 0.5
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86tbk"]
+size = Vector2(67.8611, 1353)
+
+[sub_resource type="Resource" id="Resource_7o3fg"]
+script = ExtResource("11_8sn7t")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Curve2D" id="Curve2D_tmtap"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3538, -725, 0, 0, 0, 0, -3016, -647, 0, 0, 0, 0, -1070, -70, 0, 0, 0, 0, -543, -91, 0, 0, 0, 0, 305, 108, 0, 0, 0, 0, 1988, 244)
+}
+point_count = 6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cps5g"]
+size = Vector2(31.5, 1007)
+
+[sub_resource type="Resource" id="Resource_4c4dj"]
+script = ExtResource("11_8sn7t")
+duration = 0.7
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy8rr"]
+size = Vector2(21, 1455)
+
+[sub_resource type="Resource" id="Resource_2x6pd"]
+script = ExtResource("11_8sn7t")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwemr"]
+size = Vector2(29, 3817)
+
+[sub_resource type="Resource" id="Resource_r0rco"]
+script = ExtResource("11_8sn7t")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Curve2D" id="Curve2D_sa7cs"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4041, 3318, 0, 0, 0, 0, 2801, 1793, 0, 0, 0, 0, 4312, 1593, 0, 0, 0, 0, 2387, 624)
+}
+point_count = 4
+
+[sub_resource type="Resource" id="Resource_ojivk"]
+script = ExtResource("11_8sn7t")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjk6r"]
+
 [node name="Tutorial" type="Node2D"]
 position = Vector2(1065, 133)
 
-[node name="TutoAgain" type="Sprite2D" parent="."]
-modulate = Color(0.250166, 0.131094, 0.526006, 1)
-position = Vector2(-3161.75, -3088)
-scale = Vector2(4.66488, 5.31258)
-texture = ExtResource("1_q3j0q")
+[node name="Player" parent="." instance=ExtResource("1_0rmy5")]
+position = Vector2(6750, -269)
 
-[node name="Player" parent="." node_paths=PackedStringArray("camera") groups=["HitboxEnemy"] instance=ExtResource("1_0rmy5")]
-position = Vector2(-7520, -3431)
-camera = NodePath("Camera2D")
+[node name="ColisionNivel0" parent="." instance=ExtResource("4_0uavq")]
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -300)
-zoom = Vector2(0.4, 0.4)
-position_smoothing_enabled = true
-position_smoothing_speed = 15.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_top_margin = 0.7
-drag_bottom_margin = 0.0
-script = ExtResource("3_d3l3i")
-
-[node name="Layout" type="Node2D" parent="."]
-
-[node name="PisoPt1" type="StaticBody2D" parent="Layout"]
-position = Vector2(3505, 153)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/PisoPt1"]
-position = Vector2(2194, -198)
-shape = SubResource("RectangleShape2D_47b3y")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layout/PisoPt1"]
-position = Vector2(1531, -325)
-polygon = PackedVector2Array(200, 7, -233, -60, -608, -94, -823, -123, -1424, -134, -1434, 224, -94, 261)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Layout/PisoPt1"]
-position = Vector2(2854, -171)
-scale = Vector2(1.76705, 1.65685)
-polygon = PackedVector2Array(-8, 5, 114, -111, 229, -96, 266.087, -29.1381, 300, 32, 272, 148, 12, 136)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Layout/PisoPt1"]
-position = Vector2(-75.6987, -686.724)
-scale = Vector2(1.69056, 2.02069)
-polygon = PackedVector2Array(205.164, 118.14, -3.33655, 91.9113, -197.307, 63.2083, -364.398, 13.2253, -565.634, -76.843, -768.322, -152.56, -944, -142, -1056, -106, -1100, 10, -1243.55, 470, -234, 238, -184, 226)
-
-[node name="Piso Pt2" type="StaticBody2D" parent="Layout"]
-position = Vector2(944, 133)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Layout/Piso Pt2"]
-position = Vector2(-4738, -517)
-scale = Vector2(1.42176, 1.78079)
-polygon = PackedVector2Array(285, 277, 77.3691, 525.535, -278.529, 450.724, -561, -13, -997, -76, -1098.64, -355.46, -749.777, -406.561, -345, -389, -64.9995, -382, -47.9995, -313, 32.0005, -57, 120, 143, 158, 214)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Layout/Piso Pt2"]
-position = Vector2(-927.75, 290)
-shape = SubResource("RectangleShape2D_21whg")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Layout/Piso Pt2"]
-position = Vector2(-3852, 203)
-shape = SubResource("RectangleShape2D_yvkgv")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Layout/Piso Pt2"]
-position = Vector2(-2709, 423)
-shape = SubResource("RectangleShape2D_5dtas")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Layout/Piso Pt2"]
-position = Vector2(-5299, -1086)
-shape = SubResource("RectangleShape2D_3m4o3")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Layout/Piso Pt2"]
-position = Vector2(-6360, -929)
-shape = SubResource("RectangleShape2D_yvkgv")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/Piso Pt2"]
-position = Vector2(-3978, -464)
-shape = SubResource("RectangleShape2D_chtmj")
-
-[node name="Piso Pt3" type="StaticBody2D" parent="Layout"]
-position = Vector2(-8756, -1156)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Layout/Piso Pt3"]
-position = Vector2(56.5, -88)
-shape = SubResource("RectangleShape2D_su5c8")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layout/Piso Pt3"]
-position = Vector2(-851, -450)
-scale = Vector2(1.27852, 1.78989)
-polygon = PackedVector2Array(37, -5, -68.8296, -468.184, 104.026, -483.269, 230.735, -445.837, 357, -322, 382, -151)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Layout/Piso Pt3"]
-position = Vector2(-1359.25, -1213)
-shape = SubResource("RectangleShape2D_02ork")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Layout/Piso Pt3"]
-position = Vector2(433, -88)
-shape = SubResource("RectangleShape2D_yc4jx")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Layout/Piso Pt3"]
-position = Vector2(1597, 720)
-shape = SubResource("RectangleShape2D_1yjrk")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Layout/Piso Pt3"]
-position = Vector2(-1897, -2275.5)
-shape = SubResource("RectangleShape2D_yjtmo")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="Layout/Piso Pt3"]
-position = Vector2(-2925.81, -3342.88)
-shape = SubResource("RectangleShape2D_h0bhs")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Layout/Piso Pt3"]
-position = Vector2(433, 261)
-shape = SubResource("RectangleShape2D_g6co6")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Layout/Piso Pt3"]
-position = Vector2(1323.1, -1645.4)
-shape = SubResource("RectangleShape2D_3ag5i")
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Layout/Piso Pt3"]
-position = Vector2(1323.1, -1645.4)
-polygon = PackedVector2Array(-253, -46, -508, 138, -820, 153, -757, -56, -503, -139)
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="Layout/Piso Pt3"]
-position = Vector2(-450, -450)
-shape = SubResource("RectangleShape2D_7fslf")
-
-[node name="Techo" type="StaticBody2D" parent="Layout"]
-position = Vector2(944, 20)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Layout/Techo"]
-position = Vector2(10777, -1008)
-polygon = PackedVector2Array(-11019, 367, -11286, -1118, -13584, -1279, -14188, -604, -13698, 3, -12929, 267, -12522, 516, -11289, 602)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Layout/Techo"]
-position = Vector2(11219, -2026)
-polygon = PackedVector2Array(-10331, -52, -9413, -366, -7832, -467, -7588, 530, -8057, 679, -8541, 926, -9065, 976, -9367, 911, -9690, 763, -10088, 667, -10506, 642, -10894, 758, -11160, 1007, -11488, 1384, -11707, 1028, -11735, -76)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Layout/Techo"]
-position = Vector2(625, -499)
-polygon = PackedVector2Array(-4033, -1123, -3490, -1708, -5166, -1697, -6286, -2982, -7133, -3113, -8584, -2611, -8185, -1845, -6812, -1556, -6238, -1304, -5391, -1244, -4639, -1273)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Layout/Techo"]
-position = Vector2(709, -915)
-polygon = PackedVector2Array(-8576, -2044, -7051, -2643, -8057, -6622, -13745, -7093, -13831, -6081, -11678, -6138, -9745, -5180, -8961, -3811)
-
-[node name="medidas" type="Node2D" parent="."]
-visible = false
-position = Vector2(-1065, -133)
-
-[node name="Dash" type="Line2D" parent="medidas"]
-position = Vector2(-8984, -4185)
-rotation = 1.5708
-points = PackedVector2Array(0, 0, 1800, 0)
-width = 20.0
-default_color = Color(0.54902, 0.984314, 0, 1)
-
-[node name="Salto" type="Line2D" parent="medidas/Dash"]
-position = Vector2(600, -40)
-points = PackedVector2Array(0, 0, 1200, 0)
-width = 20.0
-default_color = Color(1, 0.054902, 0.509804, 1)
-
-[node name="DashDiag" type="Line2D" parent="medidas/Dash"]
-position = Vector2(881, -954)
-points = PackedVector2Array(0, 0, 900, 900)
-width = 20.0
-default_color = Color(0.54902, 0.984314, 0, 1)
-
-[node name="Altura Salto" type="Line2D" parent="medidas"]
-position = Vector2(-9004, -3123)
-points = PackedVector2Array(0, 0, 0, 720)
-width = 20.0
-default_color = Color(0.0509804, 0.137255, 1, 1)
-
-[node name="SaltoCorto" type="Line2D" parent="medidas"]
-position = Vector2(4931, -271)
-points = PackedVector2Array(0, 0, 500, 0)
-width = 20.0
-default_color = Color(0.0509804, 0.137255, 1, 1)
+[node name="medidas" parent="." instance=ExtResource("4_lm227")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+[node name="Label" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("player", "cameraMan")]
 offset_right = 172.0
 offset_bottom = 45.0
 size_flags_horizontal = 3
@@ -251,6 +113,7 @@ text = "HGJFCXNV
 label_settings = SubResource("LabelSettings_qs24p")
 script = ExtResource("4_ycfj1")
 player = NodePath("../../Player")
+cameraMan = NodePath("../../CameraManager")
 metadata/_edit_use_anchors_ = true
 
 [node name="Enemy2" parent="." instance=ExtResource("6_8546j")]
@@ -260,3 +123,147 @@ scale = Vector2(2.25, 2.25)
 [node name="Enemy" parent="." instance=ExtResource("6_8546j")]
 position = Vector2(-9036, -3141)
 scale = Vector2(1.5, 1.5)
+
+[node name="CameraManager" type="Node" parent="." node_paths=PackedStringArray("player", "camera_0", "camera_1", "camera_2", "camera_3", "camera_4", "camera_5", "camera_6")]
+script = ExtResource("8_y4xrg")
+player = NodePath("../Player")
+camera_0 = NodePath("zone0-2/PhantomCamera2D")
+camera_1 = NodePath("zone0-1/PhantomCamera2D2")
+camera_2 = NodePath("zone2-3/PhantomCamera2D2")
+camera_3 = NodePath("zone3-4/PhantomCamera2D")
+camera_4 = NodePath("zone4-5/PhantomCamera2D")
+camera_5 = NodePath("zone5-6/PhantomCamera2D")
+camera_6 = NodePath("zone6/PhantomCamera2D")
+
+[node name="zone0-1" type="Area2D" parent="CameraManager"]
+position = Vector2(12595, -762)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/zone0-1"]
+position = Vector2(-584.5, -487)
+shape = SubResource("RectangleShape2D_0d3m8")
+
+[node name="PhantomCamera2D2" type="Node2D" parent="CameraManager/zone0-1"]
+position = Vector2(2164, -554)
+script = ExtResource("10_cranx")
+zoom = Vector2(0.17, 0.17)
+tween_resource = SubResource("Resource_o3mhp")
+draw_limits = true
+
+[node name="zone0-2" type="Area2D" parent="CameraManager"]
+position = Vector2(8785, -450)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/zone0-2"]
+position = Vector2(-2013.5, 0)
+shape = SubResource("RectangleShape2D_e4mos")
+
+[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/zone0-2" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(7815, -525.714)
+script = ExtResource("10_cranx")
+priority = 1
+follow_mode = 1
+follow_target = NodePath("../../../Player")
+zoom = Vector2(0.35, 0.35)
+tween_resource = SubResource("Resource_br0c6")
+draw_limits = true
+limit_top = -1800
+limit_bottom = 400
+
+[node name="zone2-3" type="Area2D" parent="CameraManager"]
+position = Vector2(2768, -303)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/zone2-3"]
+position = Vector2(-1364, -620)
+rotation = 2.51676
+shape = SubResource("RectangleShape2D_86tbk")
+
+[node name="PhantomCamera2D2" type="Node2D" parent="CameraManager/zone2-3" node_paths=PackedStringArray("follow_target", "follow_path")]
+top_level = true
+position = Vector2(7247, -59)
+script = ExtResource("10_cranx")
+follow_mode = 4
+follow_target = NodePath("../../../Player")
+follow_path = NodePath("../Path2D")
+zoom = Vector2(0.45, 0.45)
+tween_resource = SubResource("Resource_7o3fg")
+draw_limits = true
+
+[node name="Path2D" type="Path2D" parent="CameraManager/zone2-3"]
+visible = false
+position = Vector2(2491, 0)
+curve = SubResource("Curve2D_tmtap")
+
+[node name="zone3-4" type="Area2D" parent="CameraManager"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/zone3-4"]
+position = Vector2(-2959.25, -1316)
+shape = SubResource("RectangleShape2D_cps5g")
+
+[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/zone3-4"]
+top_level = true
+position = Vector2(-599, -526)
+script = ExtResource("10_cranx")
+follow_mode = 5
+zoom = Vector2(0.25, 0.25)
+tween_resource = SubResource("Resource_4c4dj")
+draw_limits = true
+
+[node name="zone4-5" type="Area2D" parent="CameraManager"]
+position = Vector2(-5464, -1225)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/zone4-5"]
+position = Vector2(-1673.5, -642.5)
+shape = SubResource("RectangleShape2D_qy8rr")
+
+[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/zone4-5"]
+position = Vector2(310, -244)
+script = ExtResource("10_cranx")
+zoom = Vector2(0.25, 0.25)
+tween_resource = SubResource("Resource_2x6pd")
+draw_limits = true
+
+[node name="zone5-6" type="Area2D" parent="CameraManager"]
+position = Vector2(-11347, -4623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/zone5-6"]
+position = Vector2(1096.5, -730.5)
+shape = SubResource("RectangleShape2D_vwemr")
+
+[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/zone5-6" node_paths=PackedStringArray("follow_target", "follow_path")]
+top_level = true
+position = Vector2(-7035, -3030)
+script = ExtResource("10_cranx")
+follow_mode = 4
+follow_target = NodePath("../../../Player")
+follow_path = NodePath("../Path2D")
+zoom = Vector2(0.4, 0.4)
+tween_resource = SubResource("Resource_r0rco")
+draw_limits = true
+
+[node name="Path2D" type="Path2D" parent="CameraManager/zone5-6"]
+visible = false
+curve = SubResource("Curve2D_sa7cs")
+
+[node name="zone6" type="Area2D" parent="CameraManager"]
+position = Vector2(-11737, -4069)
+
+[node name="PhantomCamera2D" type="Node2D" parent="CameraManager/zone6" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(7815, -136)
+script = ExtResource("10_cranx")
+follow_mode = 5
+follow_target = NodePath("../../../Player")
+zoom = Vector2(0.17, 0.17)
+tween_resource = SubResource("Resource_ojivk")
+draw_limits = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/zone6"]
+position = Vector2(-9588, -7855)
+shape = SubResource("RectangleShape2D_bjk6r")
+
+[connection signal="body_exited" from="CameraManager/zone0-1" to="CameraManager" method="_on_zone_01_body_exited"]
+[connection signal="body_exited" from="CameraManager/zone0-2" to="CameraManager" method="_on_zone_02_body_exited"]
+[connection signal="body_exited" from="CameraManager/zone2-3" to="CameraManager" method="_on_zone_23_body_exited"]
+[connection signal="body_exited" from="CameraManager/zone3-4" to="CameraManager" method="_on_zone_34_body_exited"]
+[connection signal="body_exited" from="CameraManager/zone4-5" to="CameraManager" method="_on_zone_45_body_exited"]
+[connection signal="body_exited" from="CameraManager/zone5-6" to="CameraManager" method="_on_zone_56_body_exited"]

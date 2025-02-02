@@ -58,10 +58,9 @@ shape = SubResource("RectangleShape2D_g8cmv")
 position = Vector2(2232, 1036)
 shape = SubResource("RectangleShape2D_g8cmv")
 
-[node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_7ob2v")]
+[node name="Player" parent="." instance=ExtResource("1_7ob2v")]
 position = Vector2(4956, 1444)
 scale = Vector2(2, 2)
-camera = NodePath("../Camera2D")
 
 [node name="Camera2D" parent="." instance=ExtResource("2_vouq8")]
 

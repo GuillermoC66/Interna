@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://0g0x5s3728bf"]
+
+[node name="medidas" type="Node2D"]
+visible = false
+position = Vector2(-1065, -133)
+
+[node name="Dash" type="Line2D" parent="."]
+position = Vector2(-8984, -4185)
+rotation = 1.5708
+points = PackedVector2Array(0, 0, 1800, 0)
+width = 20.0
+default_color = Color(0.54902, 0.984314, 0, 1)
+
+[node name="Salto" type="Line2D" parent="Dash"]
+position = Vector2(600, -40)
+points = PackedVector2Array(0, 0, 1200, 0)
+width = 20.0
+default_color = Color(1, 0.054902, 0.509804, 1)
+
+[node name="DashDiag" type="Line2D" parent="Dash"]
+position = Vector2(881, -954)
+points = PackedVector2Array(0, 0, 900, 900)
+width = 20.0
+default_color = Color(0.54902, 0.984314, 0, 1)
+
+[node name="Altura Salto" type="Line2D" parent="."]
+position = Vector2(-9004, -3123)
+points = PackedVector2Array(0, 0, 0, 720)
+width = 20.0
+default_color = Color(0.0509804, 0.137255, 1, 1)
+
+[node name="SaltoCorto" type="Line2D" parent="."]
+position = Vector2(4931, -271)
+points = PackedVector2Array(0, 0, 500, 0)
+width = 20.0
+default_color = Color(0.0509804, 0.137255, 1, 1)

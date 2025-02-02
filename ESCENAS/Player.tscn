@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://cka2icva25c4q"]
+[gd_scene load_steps=148 format=3 uid="uid://cka2icva25c4q"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Player.gd" id="1_5qni1"]
 [ext_resource type="Shape2D" uid="uid://dacdhcjw367h" path="res://RECURSOS/collisionStand.tres" id="1_u1gde"]
@@ -87,6 +87,8 @@
 [ext_resource type="Texture2D" uid="uid://br2et7kn7o25c" path="res://SPRITES/AnimacionesPJ/09 Mirar arriba/Miroarriba_0011.png" id="61_7mmce"]
 [ext_resource type="Texture2D" uid="uid://dnayytjj53fco" path="res://SPRITES/AnimacionesPJ/09 Mirar arriba/Miroarriba_0012.png" id="62_dy5hm"]
 [ext_resource type="Texture2D" uid="uid://dqgn5cddgbqvg" path="res://SPRITES/AnimacionesPJ/09 Mirar arriba/Miroarriba_0013.png" id="63_jd3o8"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="88_bckai"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="88_lay0q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtgnn"]
 radius = 138.0
@@ -987,7 +989,6 @@ shape = SubResource("CapsuleShape2D_xtgnn")
 position = Vector2(0.5, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxDash"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_buqgf")
 debug_color = Color(0.947641, 2.31028e-06, 0.582125, 0.42)
 
@@ -1058,6 +1059,21 @@ one_shot = true
 [node name="Inmunity" type="Timer" parent="StateMachine"]
 
 [node name="Coyote" type="Timer" parent="StateMachine"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2(496, -256)
+zoom = Vector2(0.4, 0.4)
+position_smoothing_speed = 15.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_bottom_margin = 0.0
+script = ExtResource("88_lay0q")
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("88_bckai")
 
 [connection signal="area_entered" from="Hurtbox" to="StateMachine" method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="HitboxDash" to="StateMachine/Dash" method="_on_hitbox_dash_area_entered"]

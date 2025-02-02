@@ -3,7 +3,7 @@ extends Camera2D
 class_name Camara
 
 @export var speed = 5
-@onready var player : CharacterBody2D = $"../Player"
+@onready var player : CharacterBody2D = get_parent()
 @onready var managerLimit : CameraLimitManager = $ManagerLimit
 
 @export var valorOffset = 30
