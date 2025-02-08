@@ -11,7 +11,7 @@ class_name Player
 #Movimiento
 var directionX : float = 0
 var directionY : float = 0
-var velocidadCaminar : float = 800
+var velocidadCaminar : float = 500
 var velocidadCorrer : float = 1700
 
 #Animacion
