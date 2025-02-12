@@ -26,6 +26,7 @@ func state_input(event : InputEvent):
 		jump()
 
 func jump():
+	
 	character.velocity.y = jump_velocity
 	stateMachine.coyote_jump = false
 

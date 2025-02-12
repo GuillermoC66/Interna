@@ -448,7 +448,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_7dp0g"]
 resource_name = "tocarpiso"
-length = 0.333338
+length = 0.166671
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -457,7 +457,7 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833334, 0.166667, 0.25),
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.125),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [14, 16, 17, 19]
@@ -994,7 +994,7 @@ states/transLookUp/position = Vector2(277.704, 145.207)
 states/walk/node = SubResource("AnimationNodeAnimation_h2w5o")
 states/walk/position = Vector2(461.259, -113.8)
 transitions = ["transLookUp", "lookup", SubResource("AnimationNodeStateMachineTransition_3fo27"), "transCrouch", "crouch", SubResource("AnimationNodeStateMachineTransition_cib5d"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_4acyx"), "idle", "WalkToRun", SubResource("AnimationNodeStateMachineTransition_8043r"), "WalkToRun", "run", SubResource("AnimationNodeStateMachineTransition_3axrb"), "run", "stop", SubResource("AnimationNodeStateMachineTransition_2g62l"), "stop", "idle", SubResource("AnimationNodeStateMachineTransition_a0qfj"), "idle", "transCrouch", SubResource("AnimationNodeStateMachineTransition_dpbia"), "crouch", "idle", SubResource("AnimationNodeStateMachineTransition_j326n"), "idle", "transLookUp", SubResource("AnimationNodeStateMachineTransition_sl0b2"), "lookup", "idle", SubResource("AnimationNodeStateMachineTransition_8xvju"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_rs1du"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_0ls42"), "IdleToWalk", "walk", SubResource("AnimationNodeStateMachineTransition_385kg"), "idle", "IdleToWalk", SubResource("AnimationNodeStateMachineTransition_uxlg7"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_uyne2"), "idle", "dash", SubResource("AnimationNodeStateMachineTransition_vvrie"), "dash", "idle", SubResource("AnimationNodeStateMachineTransition_olx4d"), "jump", "dash", SubResource("AnimationNodeStateMachineTransition_0e41x"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_rn5lj"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_3srqm"), "run", "dash", SubResource("AnimationNodeStateMachineTransition_aqqc5"), "tocarpiso", "idle", SubResource("AnimationNodeStateMachineTransition_vxynm"), "fall", "tocarpiso", SubResource("AnimationNodeStateMachineTransition_s6w6m")]
-graph_offset = Vector2(-563.951, -83.9977)
+graph_offset = Vector2(-563.951, 26.6497)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_5qni1")

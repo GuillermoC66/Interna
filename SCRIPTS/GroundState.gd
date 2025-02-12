@@ -40,7 +40,7 @@ func state_input(event : InputEvent):
 	
 #Cambiar CollisionShape		
 func crouch():
-	character.directionY = 1
+	character.directionY = 0
 	detenerse()
 	hurtbox.position.y = 24
 	hurtbox.scale.y = 0.5
