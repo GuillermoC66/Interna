@@ -1,6 +1,6 @@
 [gd_scene load_steps=150 format=3 uid="uid://cka2icva25c4q"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Player.gd" id="1_5qni1"]
+[ext_resource type="Script" uid="uid://b7f8p6r3umv8c" path="res://SCRIPTS/Player.gd" id="1_5qni1"]
 [ext_resource type="Shape2D" uid="uid://dacdhcjw367h" path="res://RECURSOS/collisionStand.tres" id="1_u1gde"]
 [ext_resource type="Texture2D" uid="uid://co1oklpbp2o2n" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_01.png" id="2_eyxdb"]
 [ext_resource type="Texture2D" uid="uid://b1j4plmjtms0p" path="res://SPRITES/AnimacionesPJ/07 Agachar/Crouch_0001.png" id="3_fdk60"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d0np8bpt4251w" path="res://SPRITES/AnimacionesPJ/07 Agachar/Crouch_0004.png" id="6_1c24m"]
 [ext_resource type="Texture2D" uid="uid://cybhln526gk5p" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_06.png" id="6_ffh5r"]
 [ext_resource type="Texture2D" uid="uid://cuuw64cf0i1re" path="res://SPRITES/AnimacionesPJ/03 Correr/CORRER_01.png" id="6_ogbu2"]
-[ext_resource type="Texture2D" uid="uid://xwcbviognfl1" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_04.png" id="6_uydsq"]
+[ext_resource type="Texture2D" uid="uid://xwcbviognfl1" path="res://SPRITES/AnimacionesPJ/05 Idle/IDLE_03.png" id="6_uydsq"]
 [ext_resource type="Texture2D" uid="uid://y2hx3dppwu5g" path="res://SPRITES/AnimacionesPJ/03 Correr/CORRER_03.png" id="7_4fg3q"]
 [ext_resource type="Texture2D" uid="uid://bpvxgyt45041f" path="res://SPRITES/AnimacionesPJ/07 Agachar/Crouch_0005.png" id="7_uykdf"]
 [ext_resource type="Texture2D" uid="uid://dbtj3sd15830y" path="res://SPRITES/AnimacionesPJ/03 Correr/CORRER_04.png" id="8_cxhxf"]
@@ -51,16 +51,16 @@
 [ext_resource type="Texture2D" uid="uid://i55m10vpg048" path="res://SPRITES/AnimacionesPJ/02 caminar-correr trans/CAMCORTRANS_02.png" id="27_4dy1l"]
 [ext_resource type="Texture2D" uid="uid://mdf1ab5s8n3i" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0001.png" id="31_o2y2o"]
 [ext_resource type="Texture2D" uid="uid://b8cs7xylsphxl" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0002.png" id="32_m3rah"]
-[ext_resource type="Script" path="res://SCRIPTS/StateMachine.gd" id="32_pc6an"]
-[ext_resource type="Script" path="res://SCRIPTS/GroundState.gd" id="33_av4f8"]
+[ext_resource type="Script" uid="uid://b70nkkergulvt" path="res://SCRIPTS/StateMachine.gd" id="32_pc6an"]
+[ext_resource type="Script" uid="uid://rjkm6ynscago" path="res://SCRIPTS/GroundState.gd" id="33_av4f8"]
 [ext_resource type="Texture2D" uid="uid://bxofjw7jqdfx6" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0003.png" id="33_bnjhl"]
-[ext_resource type="Script" path="res://SCRIPTS/AirState.gd" id="34_kidm3"]
+[ext_resource type="Script" uid="uid://c0oilnpi112e5" path="res://SCRIPTS/AirState.gd" id="34_kidm3"]
 [ext_resource type="Texture2D" uid="uid://bs4nh705hu3qv" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0004.png" id="34_mhjdv"]
 [ext_resource type="Texture2D" uid="uid://dqrrmynj2iq0h" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0005.png" id="35_wvo1n"]
-[ext_resource type="Script" path="res://SCRIPTS/DashState.gd" id="36_jots7"]
+[ext_resource type="Script" uid="uid://cl5tvev3cgxx2" path="res://SCRIPTS/DashState.gd" id="36_jots7"]
 [ext_resource type="Texture2D" uid="uid://dh17uv1dbi5qb" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0006.png" id="36_ny235"]
 [ext_resource type="Texture2D" uid="uid://cv7l461pxy241" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0007.png" id="37_fvedh"]
-[ext_resource type="Script" path="res://SCRIPTS/HurtState.gd" id="37_ngrbl"]
+[ext_resource type="Script" uid="uid://b2opt04jtksnq" path="res://SCRIPTS/HurtState.gd" id="37_ngrbl"]
 [ext_resource type="Texture2D" uid="uid://bskd5tcyxuay0" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0008.png" id="38_m86f3"]
 [ext_resource type="Texture2D" uid="uid://bvm1p0hts5er8" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0009.png" id="39_t45b6"]
 [ext_resource type="Texture2D" uid="uid://c3db0rxy1enom" path="res://SPRITES/AnimacionesPJ/08 Salto/Salto_0010.png" id="40_8nkg3"]
@@ -87,8 +87,8 @@
 [ext_resource type="Texture2D" uid="uid://br2et7kn7o25c" path="res://SPRITES/AnimacionesPJ/09 Mirar arriba/Miroarriba_0011.png" id="61_7mmce"]
 [ext_resource type="Texture2D" uid="uid://dnayytjj53fco" path="res://SPRITES/AnimacionesPJ/09 Mirar arriba/Miroarriba_0012.png" id="62_dy5hm"]
 [ext_resource type="Texture2D" uid="uid://dqgn5cddgbqvg" path="res://SPRITES/AnimacionesPJ/09 Mirar arriba/Miroarriba_0013.png" id="63_jd3o8"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="88_bckai"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="88_lay0q"]
+[ext_resource type="Script" uid="uid://gfw3ql1v87uv" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="88_bckai"]
+[ext_resource type="Script" uid="uid://dx6hjoycdrl6r" path="res://camera_2d.gd" id="88_lay0q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtgnn"]
 radius = 138.0
@@ -552,22 +552,22 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c7im1"]
 _data = {
-"IdleToWalk": SubResource("Animation_um1sm"),
-"RESET": SubResource("Animation_kl26l"),
-"WalkToRun": SubResource("Animation_vxfmh"),
-"crouch": SubResource("Animation_mndsc"),
-"dash": SubResource("Animation_plnwp"),
-"fall": SubResource("Animation_8dsok"),
-"hurt": SubResource("Animation_nghvh"),
-"idle": SubResource("Animation_0nwl6"),
-"jump": SubResource("Animation_lbe38"),
-"lookup": SubResource("Animation_8aqqp"),
-"run": SubResource("Animation_bsht1"),
-"stop": SubResource("Animation_wdpnd"),
-"tocarpiso": SubResource("Animation_7dp0g"),
-"transCrouch": SubResource("Animation_3juwm"),
-"transLookUp": SubResource("Animation_4j2au"),
-"walk": SubResource("Animation_etrm3")
+&"IdleToWalk": SubResource("Animation_um1sm"),
+&"RESET": SubResource("Animation_kl26l"),
+&"WalkToRun": SubResource("Animation_vxfmh"),
+&"crouch": SubResource("Animation_mndsc"),
+&"dash": SubResource("Animation_plnwp"),
+&"fall": SubResource("Animation_8dsok"),
+&"hurt": SubResource("Animation_nghvh"),
+&"idle": SubResource("Animation_0nwl6"),
+&"jump": SubResource("Animation_lbe38"),
+&"lookup": SubResource("Animation_8aqqp"),
+&"run": SubResource("Animation_bsht1"),
+&"stop": SubResource("Animation_wdpnd"),
+&"tocarpiso": SubResource("Animation_7dp0g"),
+&"transCrouch": SubResource("Animation_3juwm"),
+&"transLookUp": SubResource("Animation_4j2au"),
+&"walk": SubResource("Animation_etrm3")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ghlx7"]
@@ -1018,7 +1018,7 @@ shape = ExtResource("1_u1gde")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_c7im1")
+&"": SubResource("AnimationLibrary_c7im1")
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
