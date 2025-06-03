@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://c15ho5h08teu1" path="res://ESCENAS/colision_nivel_0.tscn" id="4_0uavq"]
 [ext_resource type="FontFile" uid="uid://c4mm3of2mc8o5" path="res://addons/phantom_camera/fonts/Nunito-Black.ttf" id="4_inp3a"]
 [ext_resource type="PackedScene" uid="uid://0g0x5s3728bf" path="res://RECURSOS/medidas.tscn" id="4_lm227"]
-[ext_resource type="Script" path="res://SCRIPTS/debugLabel.gd" id="4_ycfj1"]
+[ext_resource type="Script" uid="uid://7je3gtn3k43s" path="res://SCRIPTS/debugLabel.gd" id="4_ycfj1"]
 [ext_resource type="PackedScene" uid="uid://buljphv8tli08" path="res://ESCENAS/enemy.tscn" id="6_8546j"]
-[ext_resource type="Script" path="res://camera_manager.gd" id="8_y4xrg"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="10_cranx"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="11_8sn7t"]
+[ext_resource type="Script" uid="uid://dt0gihnr8frxl" path="res://camera_manager.gd" id="8_y4xrg"]
+[ext_resource type="Script" uid="uid://b0bivwgqeap2c" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="10_cranx"]
+[ext_resource type="Script" uid="uid://bbfbru8oybcdg" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="11_8sn7t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qs24p"]
 line_spacing = 2.0
@@ -61,7 +61,7 @@ transition = 0
 ease = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qy8rr"]
-size = Vector2(21, 1455)
+size = Vector2(87, 3151)
 
 [sub_resource type="Resource" id="Resource_2x6pd"]
 script = ExtResource("11_8sn7t")
@@ -70,7 +70,7 @@ transition = 0
 ease = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vwemr"]
-size = Vector2(29, 3817)
+size = Vector2(84, 5015)
 
 [sub_resource type="Resource" id="Resource_r0rco"]
 script = ExtResource("11_8sn7t")
@@ -212,7 +212,7 @@ draw_limits = true
 position = Vector2(-5464, -1225)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/zone4-5"]
-position = Vector2(-1673.5, -642.5)
+position = Vector2(-1505.5, -1490.5)
 shape = SubResource("RectangleShape2D_qy8rr")
 
 [node name="PhantomCamera2D" type="Node2D" parent="CameraManager/zone4-5"]
@@ -226,7 +226,7 @@ draw_limits = true
 position = Vector2(-11347, -4623)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraManager/zone5-6"]
-position = Vector2(1096.5, -730.5)
+position = Vector2(1153, -1329.5)
 shape = SubResource("RectangleShape2D_vwemr")
 
 [node name="PhantomCamera2D" type="Node2D" parent="CameraManager/zone5-6" node_paths=PackedStringArray("follow_target", "follow_path")]
